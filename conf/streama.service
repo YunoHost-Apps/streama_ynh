@@ -1,0 +1,16 @@
+[Unit]
+Description=streama
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/streama/
+User=admin
+Group=users
+Type=simple
+UMask=000
+ExecStart=/usr/bin/java -Djava.awt.headless=true -jar streama-1.6.0-RC9.war
+RestartSec=15
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
