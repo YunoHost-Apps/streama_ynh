@@ -149,7 +149,7 @@ cp -a ../conf/streama.service /etc/systemd/system/streama.service
 ### that really need such authorization.
 
 # Set permissions to app files
-#chown -R admin:1007 /opt/streama
+chown -R admin:1007 /opt/streama
 
 
 #=================================================
