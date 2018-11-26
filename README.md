@@ -1,6 +1,8 @@
 # Streama app for YunoHost
 Streama Server
 
+# Streama IS IN DEV
+
 - [Yunohost project](https://yunohost.org)
 - [Streama website](https://streamaserver.org)
 
