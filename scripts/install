@@ -114,6 +114,7 @@ ynh_system_user_create $app
 # MODIFY A CONFIG FILE
 #=================================================
 
+ynh_replace_string "__DOMAIN__" "$domain" "../conf/nginx.conf"
 cp -a ../conf/streama.service /etc/systemd/system/streama.service
 
 #=================================================
