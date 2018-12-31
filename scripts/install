@@ -156,4 +156,4 @@ fi
 # Reload services
 systemctl enable streama.service
 systemctl start streama.service
-systemctl restart nginx
+systemctl reload nginx
