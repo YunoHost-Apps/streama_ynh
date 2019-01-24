@@ -94,7 +94,7 @@ ynh_package_install openjdk-8-jre-headless
 ynh_app_setting_set $app final_path $final_path
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source "$final_path"
-chmod +x $final_path/streama-1.6.0-RC9.war
+chmod +x $final_path/streama-1.6.0-FINAL.war
 
 #=================================================
 # NGINX CONFIGURATION
