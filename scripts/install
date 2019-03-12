@@ -81,11 +81,20 @@ port=$(ynh_find_port 8080)
 yunohost firewall allow --no-upnp TCP $port 2>&1
 ynh_app_setting_set $app port $port
 
-#==============================================
-# INSTALL JAVA
-#==============================================
+#=================================================
+# INSTALL DEPENDENCIES
+#=================================================
 
-ynh_package_install openjdk-8-jre-headless
+ynh_print_info "Installing dependencies..."
+
+### `ynh_install_app_dependencies` allows you to add any "apt" dependencies to the package.
+### Those deb packages will be installed as dependencies of this package.
+### If you're not using this helper:
+###		- Remove the section "REMOVE DEPENDENCIES" in the remove script
+###		- As well as the section "REINSTALL DEPENDENCIES" in the restore script
+###		- And the section "UPGRADE DEPENDENCIES" in the upgrade script
+
+ynh_install_app_dependencies openjdk-8-jre-headless
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -94,7 +103,14 @@ ynh_package_install openjdk-8-jre-headless
 ynh_app_setting_set $app final_path $final_path
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source "$final_path"
-chmod +x $final_path/streama-1.6.0-FINAL.war
+chmod +x $final_path/streama.war
+
+#=================================================
+# SETUP SYSTEMD
+#=================================================
+
+ynh_add_systemd_config
+systemctl enable $app.service
 
 #=================================================
 # NGINX CONFIGURATION
@@ -115,7 +131,6 @@ ynh_system_user_create $app
 #=================================================
 
 ynh_replace_string "__DOMAIN__" "$domain" "../conf/nginx.conf"
-cp -a ../conf/streama.service /etc/systemd/system/streama.service
 
 #=================================================
 # STORE THE CONFIG FILE CHECKSUM
@@ -154,6 +169,5 @@ if [ $is_public -eq 1 ]; then
 fi
 
 # Reload services
-systemctl enable streama.service
-systemctl start streama.service
+systemctl start $app.service
 systemctl reload nginx
