@@ -6,7 +6,7 @@
         "en": "StreamaServer package for YunoHost.",
         "fr": "StreamaServer pour YunoHost."
     },
-    "version": "1.6.0-FINAL",
+    "version": "1.6.7",
     "url": "https://streamaserver.org/",
     "license": "free",
     "maintainer": {
