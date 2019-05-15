@@ -8,7 +8,7 @@ User=admin
 Group=users
 Type=simple
 UMask=000
-ExecStart=/usr/bin/java -Djava.awt.headless=true -jar streama.war
+ExecStart=/usr/bin/java -Djava.awt.headless=true -jar streama.jar
 RestartSec=15
 Restart=always
 
