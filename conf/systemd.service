@@ -9,7 +9,7 @@ Group=users
 Type=simple
 UMask=000
 ExecStart=/usr/bin/java -Djava.awt.headless=true -jar streama.jar
-RestartSec=15
+RestartSec=30
 Restart=always
 
 [Install]
