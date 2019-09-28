@@ -1,6 +1,8 @@
 # Streama app for YunoHost
 Streama Server
 
+**Shipped version:** 1.7.2
+
 - [Yunohost project](https://yunohost.org)
 - [Streama website](https://streamaserver.org)
 
