@@ -1,5 +1,5 @@
-SOURCE_URL=https://github.com/streamaserver/streama/releases/download/v1.6.7/streama-1.6.7.jar
-SOURCE_SUM=b32474221c7c5c3b439b9c719d731224c39bd49d5bd7cfe772239a27413859b5bd4a710dea63b66dd9ead9a92af8225184a70cf460161758e68e8bd5d0ab3106
+SOURCE_URL=https://github.com/streamaserver/streama/releases/download/v1.7.2/streama-1.7.2.jar
+SOURCE_SUM=fd3ea6f54c84b6300dc26f862b12d16dcceed205e83940785f5f444c3234b139f97896261a5acc242c0c05d8c5ac14971b6533cde0fd71037ebc5a9c756985b7
 SOURCE_SUM_PRG=sha512sum
 SOURCE_FORMAT=jar
 SOURCE_IN_SUBDIR=false
