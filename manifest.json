@@ -3,8 +3,8 @@
     "id": "streama",
     "packaging_format": 1,
     "description": {
-        "en": "StreamaServer package for YunoHost.",
-        "fr": "StreamaServer pour YunoHost."
+        "en": "A self hosted streaming media server",
+        "fr": "Un serveur de streaming auto-hébergé"
     },
     "version": "1.6.7",
     "url": "https://streamaserver.org/",
