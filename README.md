@@ -16,9 +16,12 @@ Streama Server
  App can be installed by YunoHost **admin web-interface** or by **running following command**:
 
         $ sudo yunohost app install https://github.com/YunoHost-Apps/streama_ynh
+        
+        Data Folder is in : /home/yunohost.app/streama
 
  
 ### Upgrade this package:
 
         $ sudo yunohost app upgrade --verbose example -u https://github.com/YunoHost-Apps/streama_ynh
+       
 
