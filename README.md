@@ -17,7 +17,7 @@ Streama Server
 
         $ sudo yunohost app install https://github.com/YunoHost-Apps/streama_ynh
         
-        Data Folder is in : /home/yunohost.app/streama
+ Data Folder is in : /home/yunohost.app/streama
 
  
 ### Upgrade this package:
