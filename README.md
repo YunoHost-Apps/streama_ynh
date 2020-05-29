@@ -18,7 +18,10 @@ Streama Server
         $ sudo yunohost app install https://github.com/YunoHost-Apps/streama_ynh
         
  Data Folder is in : /home/yunohost.app/streama
-
+ 
+### Convert video :
+ 
+        $ find -iname "*.mkv" -o -iname "*.avi" | parallel 'ffmpeg -i {} -vcodec h264 -acodec aac -strict -2 {.}.mp4'
  
 ### Upgrade this package:
 
