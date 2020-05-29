@@ -21,7 +21,7 @@ Streama Server
  
 ### Convert video :
  
-        $ ./convert.sh
+        $ convert_movies
  
 ### Upgrade this package:
 
