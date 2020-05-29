@@ -21,7 +21,7 @@ Streama Server
  
 ### Convert video :
  
-        $ find -iname "*.mkv" -o -iname "*.avi" | parallel --citation 'ffmpeg -i {} -vcodec h264 -acodec aac -strict -2 {.}.mp4'
+        $ ./convert.sh
  
 ### Upgrade this package:
 
