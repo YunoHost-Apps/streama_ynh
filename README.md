@@ -4,7 +4,7 @@ Streama Server
 **Shipped version:** 1.9.1
 
 - [Yunohost project](https://yunohost.org)
-- [Streama website](https://streamaserver.org)
+- [Streama website](https://github.com/streamaserver/streama/)
 
 ![](https://avatars2.githubusercontent.com/u/38193973?s=280&v=4)
 
