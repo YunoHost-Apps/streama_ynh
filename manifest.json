@@ -37,11 +37,11 @@
                 "name": "path",
                 "type": "path",
                 "ask": {
-                    "en": "Choose a path for StreamaServer only / is accepted",
-                    "fr": "Choisissez un chemin pour StreamaServer seulement / est accepté"
+                    "en": "Choose a path for StreamaServer /streama is accepted",
+                    "fr": "Choisissez un chemin pour StreamaServer /streama est accepté"
                 },
-                "example": "/",
-                "default": "/"
+                "example": "/streama",
+                "default": "/streama"
             },
             
             {
