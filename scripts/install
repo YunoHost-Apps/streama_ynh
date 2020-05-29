@@ -151,8 +151,9 @@ ynh_replace_string "__DOMAIN__" "$domain" "../conf/nginx.conf"
 ### that really need such authorization.
 
 # Set permissions to app files
+mkdir -p $final_path/data/streama
+ln -s $final_path/data/streama /home/yunohost.app/streama
 chown -R $app: $final_path
-
 
 #=================================================
 # SETUP SSOWAT
