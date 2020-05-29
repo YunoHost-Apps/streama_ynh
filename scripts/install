@@ -151,7 +151,7 @@ ynh_replace_string "__DOMAIN__" "$domain" "../conf/nginx.conf"
 ### that really need such authorization.
 
 # Set permissions to app files
-chown -R admin:1007 /opt/streama
+chown -R $app: $final_path
 
 
 #=================================================
