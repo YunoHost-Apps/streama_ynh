@@ -6,7 +6,7 @@
         "en": "A self hosted streaming media server",
         "fr": "Un serveur de streaming auto-hébergé"
     },
-    "version": "1.8.0",
+    "version": "1.9.1",
     "url": "https://streamaserver.org/",
     "license": "free",
     "maintainer": {
