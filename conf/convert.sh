@@ -1,6 +1,6 @@
 #! /bin/bash
-for file in $(find /home/yunohost.app/streama/ -iname "*.mkv" -o -iname "*.avi")
+while IFS= read -r -d '' file
 do
-  ffmpeg -i "$file" -vcodec h264 -acodec aac -strict -2 "${file%.*}.mp4"
+  ffmpeg -nostdin -i "$file" -vcodec h264 -acodec aac -strict -2 "${file%.*}.mp4"
   rm -f "$file"
-done
+done <   <(find /home/yunohost.app/streama/ -name '*.mkv' '*.avi' -print0)
