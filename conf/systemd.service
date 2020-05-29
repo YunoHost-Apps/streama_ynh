@@ -4,8 +4,8 @@ After=network.target
 
 [Service]
 WorkingDirectory=/opt/streama/
-User=admin
-Group=streama
+User=streama
+Group=users
 Type=simple
 UMask=000
 ExecStart=/usr/bin/java -Djava.awt.headless=true -jar streama.jar
