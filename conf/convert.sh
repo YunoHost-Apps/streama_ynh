@@ -43,7 +43,7 @@ do
   avidemux3_cli --nogui --video-codec "$video_codec" --audio-codec "$audio_codec" --load "$file" --output-format "$output_format" --save "${file%.*}.mp4" --quit
   rm -f "$file"
 done <   <(find /home/pc/Téléchargements/Movies/ -name '*.mkv' -print0 -o -name '*.avi' -print0)
-#chown -R streama:users /home/yunohost.app/streama/upload/
+chown -R streama:users /home/yunohost.app/streama/upload/
 }
 
 parse_args ()
