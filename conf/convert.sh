@@ -5,7 +5,7 @@
 # Thanks : 
 # License: GNU GPLv3
 
-version="0.2.2"
+version="0.2.3"
 
 echo "Welcome on Convert Movies Script $version"
 
@@ -20,11 +20,12 @@ flock -n 9 || exit
 
 usage ()
 {
-     echo "usage: -ffmpeg or -avidemux or -mencoder"
+     echo "usage: -ffmpeg / -avidemux / -mencoder / -avconv"
      echo "options:"
      echo "-ffmpeg: Convert with ffmpeg"
      echo "-avidemux: Convert with avidemux"
-     echo "-mencoder: Convert with mencoder
+     echo "-mencoder: Convert with mencoder"
+     echo "-avconv: Convert with avconv"
      echo "-h: Show help"
 }
 
@@ -58,6 +59,15 @@ done <   <(find /home/yunohost.app/streama/upload/ -name '*.mkv' -print0 -o -nam
 chown -R streama:users /home/yunohost.app/streama/upload/
 }
 
+avconv_convert(){
+while IFS= read -r -d '' file
+do
+  avconv -i "$file" -codec copy "${file%.*}.mp4"
+  rm -f "$file"
+done <   <(find /home/yunohost.app/streama/upload/ -name '*.mkv' -print0 -o -name '*.avi' -print0)
+chown -R streama:users /home/yunohost.app/streama/upload/
+}
+
 parse_args ()
 {
     while [ $# -ne 0 ]
@@ -74,6 +84,9 @@ parse_args ()
             -mencoder)
                 shift
                 mencoder_convert >&2
+            -avconv)
+                shift
+                avconv_convert >&2
             -h|--help)
                 usage
                 exit 0
