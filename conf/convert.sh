@@ -7,6 +7,8 @@
 
 version="0.2.0"
 
+echo "Welcome on Convert Movies Script $version"
+
 #=================================================
 # RETRIEVE ARGUMENTS FROM THE MANIFEST AND VAR
 #=================================================
