@@ -41,7 +41,7 @@ do
   #ffmpeg -nostdin -i "$file" -vcodec h264 -acodec aac -strict -2 "${file%.*}.mp4"
   avidemux3_cli --video-codec $VIDEOCODEC --audio-codec $AUDIOCODEC --force-alt-h264 --load "$file" --save "${file%.*}.mp4" --quit
   rm -f "$file"
-done <   <(find /home/pc/Téléchargements/odrive-bin/ -name '*.mkv' -print0 -o -name '*.avi' -print0)
+done <   <(find /home/yunohost.app/streama/ -name '*.mkv' -print0 -o -name '*.avi' -print0)
 }
 
 parse_args ()
