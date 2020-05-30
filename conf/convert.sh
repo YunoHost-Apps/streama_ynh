@@ -38,7 +38,7 @@ chown -R streama:users /home/yunohost.app/streama/upload/
 
 avidemux_convert(){
 video_codec="h264"
-audio_codec="LavAAC"
+audio_codec="FDK_AAC"
 output_format="MP4"
 while IFS= read -r -d '' file
 do
