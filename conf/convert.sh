@@ -5,7 +5,7 @@
 # Thanks : 
 # License: GNU GPLv3
 
-version="0.2.0"
+version="0.2.1"
 
 echo "Welcome on Convert Movies Script $version"
 
@@ -37,7 +37,7 @@ chown -R streama:users /home/yunohost.app/streama/upload/
 }
 
 avidemux_convert(){
-video_codec="h264"
+video_codec="Copy"
 audio_codec="FDK_AAC"
 output_format="MP4"
 while IFS= read -r -d '' file
