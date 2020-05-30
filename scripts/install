@@ -156,6 +156,8 @@ ln -s $final_path/data/streama /home/yunohost.app/streama
 chown -R $app: $final_path
 cp "../conf/convert.sh" /usr/bin/convert_movies
 chmod +x /usr/bin/convert_movies
+mkdir -p /home/yunohost.app/streama/upload
+chown -R $app:users /home/yunohost.app/streama/upload
 
 #=================================================
 # SETUP SSOWAT
