@@ -21,7 +21,7 @@ Streama Server
  
 ### Convert video :
  
-        $ convert_movies
+        $ convert_movies -ffmpeg or convert_movies -avidemux
  
 ### Upgrade this package:
 
