@@ -38,7 +38,6 @@ VIDEOCODEC="mp4"
 AUDIOCODEC="aac"
 while IFS= read -r -d '' file
 do
-  #ffmpeg -nostdin -i "$file" -vcodec h264 -acodec aac -strict -2 "${file%.*}.mp4"
   avidemux3_cli --video-codec $VIDEOCODEC --audio-codec $AUDIOCODEC --force-alt-h264 --load "$file" --save "${file%.*}.mp4" --quit
   rm -f "$file"
 done <   <(find /home/yunohost.app/streama/ -name '*.mkv' -print0 -o -name '*.avi' -print0)
