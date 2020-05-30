@@ -29,4 +29,13 @@ Streama Server
 
         $ sudo yunohost app upgrade --verbose example -u https://github.com/YunoHost-Apps/streama_ynh
        
+### Avidemux compilation :
 
+        $ git clone https://github.com/mean00/avidemux2/
+        $ cd avidemux2
+        $ sudo apt-get install build-essential cmake \
+        pkg-config yasm libsqlite3-dev libfontconfig1-dev \
+        libfribidi-dev libxvdev libvdpau-dev libva-dev \
+        libasound2-dev libpulse-dev libfdk-aac-dev
+        $ bash bootStrap.bash --deb --without-qt --with-cli
+        
