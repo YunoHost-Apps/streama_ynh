@@ -21,7 +21,7 @@ usage ()
      echo "usage: -ffmpeg or -avidemux"
      echo "options:"
      echo "-ffmpeg: Convert with ffmpeg"
-     echo "-remove: Convert with avidemux"
+     echo "-avidemux: Convert with avidemux"
      echo "-h: Show help"
 }
 
