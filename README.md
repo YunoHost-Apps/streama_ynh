@@ -37,8 +37,12 @@ Streama Server
         pkg-config yasm libsqlite3-dev libfontconfig1-dev \
         libfribidi-dev libxvdev libvdpau-dev libva-dev \
         libasound2-dev libpulse-dev libfdk-aac-dev \
-        libpng-dev libaften-dev libmp3lame-dev libx264-dev \
+        libpng-dev libmp3lame-dev libx264-dev \
         libxvidcore-dev libfaad-dev libfaac-dev libopus-dev \
         libvorbis-dev libogg-dev libdca-dev libx265-dev
+        $ wget https://www.deb-multimedia.org/pool/main/a/aften/libaften0_0.0.8svn20100103-dmo2_amd64.deb
+        $ wget https://www.deb-multimedia.org/pool/main/a/aften/libaften-dev_0.0.8svn20100103-dmo2_amd64.deb
+        $ sudo dpkg -i libaften0_0.0.8svn20100103-dmo2_amd64.deb
+        $ sudo dpkg -i libaften-dev_0.0.8svn20100103-dmo2_amd64.deb
         $ bash bootStrap.bash --deb --without-qt --with-cli
         
