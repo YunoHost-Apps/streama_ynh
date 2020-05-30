@@ -36,6 +36,9 @@ Streama Server
         $ sudo apt-get install build-essential cmake \
         pkg-config yasm libsqlite3-dev libfontconfig1-dev \
         libfribidi-dev libxvdev libvdpau-dev libva-dev \
-        libasound2-dev libpulse-dev libfdk-aac-dev
+        libasound2-dev libpulse-dev libfdk-aac-dev \
+        libpng-dev libaften-dev libmp3lame-dev libx264-dev \
+        libxvidcore-dev libfaad-dev libfaac-dev libopus-dev \
+        libvorbis-dev libogg-dev libdca-dev libx265-dev
         $ bash bootStrap.bash --deb --without-qt --with-cli
         
