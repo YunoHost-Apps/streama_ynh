@@ -17,7 +17,8 @@ Streama Server
 
         $ sudo yunohost app install https://github.com/YunoHost-Apps/streama_ynh
         
- Data Folder is : /home/yunohost.app/streama
+ Upload directory is : /home/yunohost.app/streama
+ Local video is : /home/yunohost.app/streama/upload
  
 ### Convert video :
  
