@@ -23,7 +23,10 @@ Streama Server
  
 ### Convert video :
  
-        $ convert_movies -ffmpeg or convert_movies -avidemux
+        $ convert_movies -ffmpeg 
+        $ convert_movies -avidemux
+        $ convert_movies -mencoder
+        $ convert_movies -avconv
  
 ### Upgrade this package:
 
