@@ -5,7 +5,7 @@
 # Thanks : 
 # License: GNU GPLv3
 
-version="0.1.0"
+version="0.2.0"
 
 #=================================================
 # RETRIEVE ARGUMENTS FROM THE MANIFEST AND VAR
@@ -35,14 +35,15 @@ chown -R streama:users /home/yunohost.app/streama/upload/
 }
 
 avidemux_convert(){
-VIDEOCODEC="mp4"
-AUDIOCODEC="aac"
+video_codec="h264"
+audio_codec="LavAAC"
+output_format="MP4"
 while IFS= read -r -d '' file
 do
-  avidemux3_cli --video-codec $VIDEOCODEC --audio-codec $AUDIOCODEC --force-alt-h264 --load "$file" --save "${file%.*}.mp4" --quit
+  avidemux3_cli --nogui --video-codec "$video_codec" --audio-codec "$audio_codec" --load "$file" --output-format "$output_format" --save "${file%.*}.mp4" --quit
   rm -f "$file"
-done <   <(find /home/yunohost.app/streama/upload/ -name '*.mkv' -print0 -o -name '*.avi' -print0)
-chown -R streama:users /home/yunohost.app/streama/upload/
+done <   <(find /home/pc/Téléchargements/Movies/ -name '*.mkv' -print0 -o -name '*.avi' -print0)
+#chown -R streama:users /home/yunohost.app/streama/upload/
 }
 
 parse_args ()
