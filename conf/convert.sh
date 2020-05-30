@@ -11,7 +11,7 @@ version="0.1.0"
 # RETRIEVE ARGUMENTS FROM THE MANIFEST AND VAR
 #=================================================
 
-lock="/tmp/wp-sync.lock"
+lock="/tmp/convert_movies.lock"
 
 exec 9>"${lock}"
 flock -n 9 || exit
