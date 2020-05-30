@@ -62,7 +62,7 @@ chown -R streama:users /home/yunohost.app/streama/upload/
 avconv_convert(){
 while IFS= read -r -d '' file
 do
-  avconv -i "$file" -codec copy "${file%.*}.mp4"
+  avconv -i "$file" -c:v h264 -c:a aac "${file%.*}.mp4"
   rm -f "$file"
 done <   <(find /home/yunohost.app/streama/upload/ -name '*.mkv' -print0 -o -name '*.avi' -print0)
 chown -R streama:users /home/yunohost.app/streama/upload/
