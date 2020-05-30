@@ -20,7 +20,7 @@ flock -n 9 || exit
 
 usage ()
 {
-     echo "usage: -ffmpeg / -avidemux / -mencoder / -avconv"
+     echo "usage: convert_movies -ffmpeg"
      echo "options:"
      echo "-ffmpeg: Convert with ffmpeg"
      echo "-avidemux: Convert with avidemux"
