@@ -32,7 +32,7 @@ usage ()
 ffmpeg_convert(){
 while IFS= read -r -d '' file
 do
-  ffmpeg -nostdin -i "$file" -vcodec h264 -acodec aac -strict -2 "${file%.*}.mp4"
+  ffmpeg -nostdin -i "$file" -c:v libx264 -c:a aac "${file%.*}.mp4"
   rm -f "$file"
 done <   <(find /home/yunohost.app/streama/upload/ -name '*.mkv' -print0 -o -name '*.avi' -print0)
 chown -R streama:users /home/yunohost.app/streama/upload/
