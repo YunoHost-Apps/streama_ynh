@@ -30,8 +30,8 @@ while IFS= read -r -d '' file
 do
   ffmpeg -nostdin -i "$file" -vcodec h264 -acodec aac -strict -2 "${file%.*}.mp4"
   rm -f "$file"
-done <   <(find /home/yunohost.app/streama/ -name '*.mkv' -print0 -o -name '*.avi' -print0)
-chown -R streama:users /home/yunohost.app/streama/
+done <   <(find /home/yunohost.app/streama/upload/ -name '*.mkv' -print0 -o -name '*.avi' -print0)
+chown -R streama:users /home/yunohost.app/streama/upload/
 }
 
 avidemux_convert(){
@@ -41,8 +41,8 @@ while IFS= read -r -d '' file
 do
   avidemux3_cli --video-codec $VIDEOCODEC --audio-codec $AUDIOCODEC --force-alt-h264 --load "$file" --save "${file%.*}.mp4" --quit
   rm -f "$file"
-done <   <(find /home/yunohost.app/streama/ -name '*.mkv' -print0 -o -name '*.avi' -print0)
-chown -R streama:users /home/yunohost.app/streama/
+done <   <(find /home/yunohost.app/streama/upload/ -name '*.mkv' -print0 -o -name '*.avi' -print0)
+chown -R streama:users /home/yunohost.app/streama/upload/
 }
 
 parse_args ()
