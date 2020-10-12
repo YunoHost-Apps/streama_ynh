@@ -1,5 +1,4 @@
-# Streama app for YunoHost
-Streama Server
+# Streama for YunoHost
 
 **Shipped version:** 1.9.1
 

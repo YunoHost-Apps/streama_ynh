@@ -3,10 +3,10 @@
     "id": "streama",
     "packaging_format": 1,
     "description": {
-        "en": "A self hosted streaming media server",
-        "fr": "Un serveur de streaming auto-hébergé"
+        "en": "Self hosted streaming media server",
+        "fr": "Serveur de streaming auto-hébergé"
     },
-    "version": "1.9.1",
+    "version": "1.9.1~ynh1",
     "url": "https://streamaserver.org/",
     "license": "free",
     "maintainer": {
@@ -14,12 +14,12 @@
         "email": "liberodark@gmail.com"
     },
     "requirements": {
-        "yunohost": ">= 2.7.2"
+        "yunohost": ">= 3.8.1"
     },
     "multi_instance": true,
     "services": [
         "nginx",
-        "php5-fpm",
+        "php7.0-fpm",
         "mysql"
     ],
     "arguments": {
@@ -48,10 +48,10 @@
                 "name": "is_public",
                 "type": "boolean",
                 "ask": {
-                    "en": "Is it a public site ?",
+                    "en": "Is it a public site?",
                     "fr": "Est-ce un site public ?"
                 },
-                "default": "true"
+                "default": true
             }
         ]
     }
