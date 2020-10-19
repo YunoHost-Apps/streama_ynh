@@ -1,4 +1,8 @@
-# Streama app for YunoHost
+# Streama for YunoHost
+
+[![Integration level](https://dash.yunohost.org/integration/streama.svg)](https://dash.yunohost.org/appci/app/streama) ![](https://ci-apps.yunohost.org/ci/badges/streama.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/streama.maintain.svg)  
+[![Install Streama with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=streama)
+
 Streama Server
 
 **Shipped version:** 1.9.1
@@ -7,9 +11,6 @@ Streama Server
 - [Streama website](https://github.com/streamaserver/streama/)
 
 ![](https://avatars2.githubusercontent.com/u/38193973?s=280&v=4)
-
-
-[![Install Streama with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=streama)
 
 ### Installing guide
 
