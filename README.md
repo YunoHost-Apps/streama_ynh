@@ -3,7 +3,12 @@
 [![Integration level](https://dash.yunohost.org/integration/streama.svg)](https://dash.yunohost.org/appci/app/streama) ![](https://ci-apps.yunohost.org/ci/badges/streama.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/streama.maintain.svg)  
 [![Install Streama with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=streama)
 
-Streama Server
+
+*[Lire ce readme en français.](./README_fr.md)*
+
+> *This package allows you to install Streama quickly and simply on a YunoHost server.  
+If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/install) to learn how to install it.*
+
 
 **Shipped version:** 1.9.1
 
@@ -48,9 +53,8 @@ Streama Server
 
 #### Multi-user support
 
-Are LDAP and HTTP auth supported? NO
-
-Can the app be used by multiple users? YES
+* Are LDAP and HTTP auth supported? NO
+* Can the app be used by multiple users? YES
 
 #### Supported architectures
 
