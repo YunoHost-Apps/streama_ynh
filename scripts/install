@@ -71,13 +71,6 @@ ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 ynh_setup_source --dest_dir="$final_path"
 
 #=================================================
-# SETUP SYSTEMD
-#=================================================
-
-ynh_add_systemd_config
-systemctl enable $app.service
-
-#=================================================
 # NGINX CONFIGURATION
 #=================================================
 ynh_script_progression --message="Configuring NGINX web server..." --time --weight=1
@@ -100,9 +93,21 @@ ynh_system_user_create --username=$app
 # Set permissions to app files
 mkdir -p $final_path/data/streama
 ln -s $final_path/data/streama /home/yunohost.app/streama
-chown -R $app: $final_path
 cp "../conf/convert.sh" /usr/bin/convert_movies
+
+#=================================================
+# SECURE FILES AND DIRECTORIES
+#=================================================
+
+chown -R $app: $final_path
 chmod +x /usr/bin/convert_movies
+
+#=================================================
+# INTEGRATE SERVICE IN YUNOHOST
+#=================================================
+ynh_script_progression --message="Integrating service in YunoHost..." --time --weight=1
+
+yunohost service add $app --description "A short description of the app" --log "/var/log/$app/$app.log"
 
 #=================================================
 # START SYSTEMD SERVICE
