@@ -66,10 +66,9 @@ ynh_app_setting_set --app=$app --key=port --value=$port
 #=================================================
 # INSTALL DEPENDENCIES
 #=================================================
-
 ynh_print_info "Installing dependencies..."
 
-ynh_install_app_dependencies openjdk-8-jre-headless ffmpeg
+ynh_install_app_dependencies openjdk-11-jre-headless ffmpeg
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
