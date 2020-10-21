@@ -80,15 +80,15 @@ systemctl enable $app.service
 #=================================================
 # NGINX CONFIGURATION
 #=================================================
-ynh_script_progression --message="Configuring nginx web server..." --time --weight=1
+ynh_script_progression --message="Configuring NGINX web server..." --time --weight=1
 
-# Create a dedicated nginx config
+# Create a dedicated NGINX config
 ynh_add_nginx_config
 
 #=================================================
 # CREATE DEDICATED USER
 #=================================================
-ynh_script_progression --message="Configuring system user..." --time --weight=1
+ynh_script_progression --message="Configuring system user..." --weight=1
 
 # Create a system user
 ynh_system_user_create --username=$app
@@ -105,6 +105,14 @@ cp "../conf/convert.sh" /usr/bin/convert_movies
 chmod +x /usr/bin/convert_movies
 
 #=================================================
+# START SYSTEMD SERVICE
+#=================================================
+ynh_script_progression --message="Starting a systemd service..." --weight=1
+
+# Start a systemd service
+ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log"
+
+#=================================================
 # SETUP SSOWAT
 #=================================================
 ynh_script_progression --message="Configuring SSOwat..." --time --weight=1
@@ -115,14 +123,10 @@ if [ $is_public -eq 1 ]; then
   ynh_app_setting_set "$app" unprotected_uris "/"
 fi
 
-
-# Reload services
-systemctl start $app.service
-
 #=================================================
 # RELOAD NGINX
 #=================================================
-ynh_script_progression --message="Reloading nginx web server..." --time --weight=1
+ynh_script_progression --message="Reloading NGINX web server..." --time --weight=1
 
 ynh_systemd_action --service_name=nginx --action=reload
 
@@ -131,4 +135,3 @@ ynh_systemd_action --service_name=nginx --action=reload
 #=================================================
 
 ynh_script_progression --message="Installation of $app completed" --time --last
-
