@@ -27,7 +27,7 @@ Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install
 
 ## Guide d’installation
 
-  L’application peut être installée par **l’interface web-admin** Yunohost ou en **exécutant la commande suivante** :
+  L’application peut être installée par **l’interface web-admin** YunoHost ou en **exécutant la commande suivante** :
 
         $ sudo yunohost app install https://github.com/YunoHost-Apps/streama_ynh
         
@@ -44,8 +44,8 @@ Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install
 
 #### Support multi-utilisateur
 
-* L'authentification LDAP et HTTP est-elle prise en charge ? NON
-* L'application peut-elle être utilisée par plusieurs utilisateurs ? OUI
+* L'authentification LDAP et HTTP est-elle prise en charge ? **Non**
+* L'application peut-elle être utilisée par plusieurs utilisateurs ? **Oui**
 
 #### Architectures supportées
 
@@ -89,8 +89,6 @@ Ceci pourra être changé dans les paramètres.
         $ sudo dpkg -i libaften0_0.0.8svn20100103-dmo2_amd64.deb
         $ sudo dpkg -i libaften-dev_0.0.8svn20100103-dmo2_amd64.deb
         $ bash bootStrap.bash --deb --without-qt --with-cli
-
-
 
 ## Liens
 
