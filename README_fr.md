@@ -1,25 +1,23 @@
-# Streama for YunoHost
-
+# Streama pour YunoHost
 [![Integration level](https://dash.yunohost.org/integration/streama.svg)](https://dash.yunohost.org/appci/app/streama) ![](https://ci-apps.yunohost.org/ci/badges/streama.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/streama.maintain.svg)  
 [![Install Streama with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=streama)
 
+*[Read this readme in english.](./README.md)* 
 
-*[Lire ce readme en français.](./README_fr.md)*
+> *Ce package vous permet d'installer Streama rapidement et simplement sur un serveur YunoHost.  
+Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install) pour apprendre comment l'installer.*
 
-> *This package allows you to install Streama quickly and simply on a YunoHost server.  
-If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/install) to learn how to install it.*
+## Vue d'ensemble
 
+**Version incluse :** 1.9.1
 
-**Shipped version:** 1.9.1
-
-- [Yunohost project](https://yunohost.org)
-- [Streama website](https://docs.streama-project.com/)
+- [Projet Yunohost](https://yunohost.org)
+- [Site web de Streama](https://docs.streama-project.com/)
 
 ![](https://raw.githubusercontent.com/streamaserver/streama/master/design/banner2.png)
 
 
-
-## Screenshots
+## Captures d'écran
 
 ![Streama 1](https://user-images.githubusercontent.com/51749973/96721582-9fb9f900-13ac-11eb-89b0-c20a6019c9c6.jpg)
 ![Streama 2](https://user-images.githubusercontent.com/51749973/96721578-9f216280-13ac-11eb-9f6c-94b4199f8eaf.jpg)
@@ -27,62 +25,66 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 ![Streama 4](https://user-images.githubusercontent.com/51749973/96721574-9df03580-13ac-11eb-9031-fb1c2dbfca9a.jpg)
 
 
-
-## Demo
-
-* [Official demo](https://streama.demo-version.net)
-
-**User**: demoUser
-
-**Password**: demoUser
+## Démo
 
 
-## Installation guide
+* [Demo officielle](https://streama.demo-version.net)
 
- App can be installed by YunoHost **admin web-interface** or by **running following command**:
+**Nom d’utilisateur** : demoUser
+
+**Mot de passe** : demoUser
+
+
+
+## Guide d’installation
+
+  L’application peut être installée par **l’interface web-admin** Yunohost ou en **exécutant la commande suivante** :
 
         $ sudo yunohost app install https://github.com/YunoHost-Apps/streama_ynh
         
- Default upload directory is : /home/yunohost.app/streama (must be mentioned in *Settings* page or can be changed)
  
- Default local video directory is : /home/yunohost.app/streama/upload (must be mentioned in *Settings* page or can be changed)
+ Le répertoire de téléchargement par défaut est : /home/yunohost.app/streama (doit être mentionné dans la page *Paramètres* ou peut être modifié)
+ 
+ Le répertoire vidéo local par défaut est : /home/yunohost.app/streama/upload (doit être mentionné dans la page *Paramètres* ou peut être modifié)
+ 
 
 ## Documentation
 
- * Official documentation: https://docs.streama-project.com/ or https://github.com/streamaserver/streama/wiki
+ * Documentation officielle : https://docs.streama-project.com/ ou https://github.com/streamaserver/streama/wiki
 
-#### Multi-user support
 
-* Are LDAP and HTTP auth supported? NO
-* Can the app be used by multiple users? YES
+#### Support multi-utilisateur
 
-#### Supported architectures
+* L'authentification LDAP et HTTP est-elle prise en charge ? NON
+* L'application peut-elle être utilisée par plusieurs utilisateurs ? OUI
+
+#### Architectures supportées
 
 * x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logsSTREAMA%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/streama/)
 * ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/STREAMA%20%28Apps%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/streama/)
 
 ## Limitations
 
-* Installation requires a dedicated domain or subdomain.
+* L’installation nécessite un domaine ou un sous-domaine dédié.
 
-## Additional information
+## Informations additionnelles
 
-* After install:
+* Après l’installation :
 
-**Username**: admin
+**Nom d’utilisateur** : admin
 
-**Password**: admin
+**Mot de passe** : admin
 
-This can be changed in settings.
+Ceci pourra être changé dans les paramètres.
 
-### Convert video :
+### Convertir des vidéos :
  
         $ convert_movies -ffmpeg 
         $ convert_movies -avidemux
         $ convert_movies -mencoder
         $ convert_movies -avconv
         
-### Avidemux compilation :
+### Compilation avidemux :
 
         $ git clone https://github.com/mean00/avidemux2/
         $ cd avidemux2
@@ -99,37 +101,25 @@ This can be changed in settings.
         $ sudo dpkg -i libaften-dev_0.0.8svn20100103-dmo2_amd64.deb
         $ bash bootStrap.bash --deb --without-qt --with-cli
 
-## Links
 
- * Report a bug: https://github.com/YunoHost-Apps/streama_ynh/issues
- * App website: https://docs.streama-project.com/
- * Upstream app repository: https://github.com/streamaserver/streama
- * YunoHost website: https://yunohost.org/
+
+## Liens
+
+ * Signaler un bug : https://github.com/YunoHost-Apps/streama_ynh/issues
+ * Site de l'application : https://docs.streama-project.com/
+ * Dépôt de l'application principale : https://github.com/streamaserver/streama
+ * Site web YunoHost : https://yunohost.org/
 
 ---
 
-Developer info
+Informations pour les développeurs
 ----------------
 
-Please send your pull request to the [testing branch](https://github.com/YunoHost-Apps/streama_ynh/tree/testing).
+Merci de faire vos pull request sur la [branche testing](https://github.com/YunoHost-Apps/streama_ynh/tree/testing).
 
-To try the testing branch, please proceed like that.
+Pour essayer la branche testing, procédez comme suit.
 ```
 sudo yunohost app install https://github.com/YunoHost-Apps/streama_ynh/tree/testing --debug
-or
+ou
 sudo yunohost app upgrade streama -u https://github.com/YunoHost-Apps/streama_ynh/tree/testing --debug
 ```
-
-
-
-
-
-
-
-
-
-
-
- 
-
-        
