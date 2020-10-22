@@ -52,7 +52,7 @@ ynh_app_setting_set --app=$app --key=is_public --value=$is_public
 #=================================================
 # FIND AND OPEN A PORT
 #=================================================
-ynh_script_progression --message="Configuring firewall..." --time --weight=3
+ynh_script_progression --message="Configuring firewall..." --weight=3
 
 # Find a free port
 port=$(ynh_find_port --port=8095)
@@ -119,7 +119,7 @@ cp "../conf/convert.sh" /usr/bin/convert_movies
 
 chown -R $app: $final_path
 chmod +x /usr/bin/convert_movies
-chmod +x $final_path/streama-${streama_version}.jar
+chmod +x $final_path/streama.jar
 
 #=================================================
 # SETUP SSOWAT
