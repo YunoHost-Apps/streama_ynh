@@ -3,39 +3,23 @@
 [![Integration level](https://dash.yunohost.org/integration/streama.svg)](https://dash.yunohost.org/appci/app/streama) ![](https://ci-apps.yunohost.org/ci/badges/streama.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/streama.maintain.svg)  
 [![Install Streama with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=streama)
 
-
 *[Lire ce readme en français.](./README_fr.md)*
 
 > *This package allows you to install Streama quickly and simply on a YunoHost server.  
 If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/install) to learn how to install it.*
 
-
 **Shipped version:** 1.9.1
-
-- [Yunohost project](https://yunohost.org)
-- [Streama website](https://docs.streama-project.com/)
-
-![](https://raw.githubusercontent.com/streamaserver/streama/master/design/banner2.png)
-
-
 
 ## Screenshots
 
-![Streama 1](https://user-images.githubusercontent.com/51749973/96721582-9fb9f900-13ac-11eb-89b0-c20a6019c9c6.jpg)
-![Streama 2](https://user-images.githubusercontent.com/51749973/96721578-9f216280-13ac-11eb-9f6c-94b4199f8eaf.jpg)
 ![Streama 3](https://user-images.githubusercontent.com/51749973/96721577-9f216280-13ac-11eb-935c-d083f4b010a2.jpg)
-![Streama 4](https://user-images.githubusercontent.com/51749973/96721574-9df03580-13ac-11eb-9031-fb1c2dbfca9a.jpg)
-
-
 
 ## Demo
 
 * [Official demo](https://streama.demo-version.net)
 
 **User**: demoUser
-
 **Password**: demoUser
-
 
 ## Installation guide
 
@@ -53,8 +37,8 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 #### Multi-user support
 
-* Are LDAP and HTTP auth supported? NO
-* Can the app be used by multiple users? YES
+* Are LDAP and HTTP auth supported? **No**
+* Can the app be used by multiple users? **Yes**
 
 #### Supported architectures
 
@@ -70,19 +54,18 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 * After install:
 
 **Username**: admin
-
 **Password**: admin
 
 This can be changed in settings.
 
-### Convert video :
+### Convert video:
  
         $ convert_movies -ffmpeg 
         $ convert_movies -avidemux
         $ convert_movies -mencoder
         $ convert_movies -avconv
         
-### Avidemux compilation :
+### Avidemux compilation:
 
         $ git clone https://github.com/mean00/avidemux2/
         $ cd avidemux2
@@ -108,8 +91,7 @@ This can be changed in settings.
 
 ---
 
-Developer info
-----------------
+## Developer info
 
 Please send your pull request to the [testing branch](https://github.com/YunoHost-Apps/streama_ynh/tree/testing).
 
@@ -119,17 +101,3 @@ sudo yunohost app install https://github.com/YunoHost-Apps/streama_ynh/tree/test
 or
 sudo yunohost app upgrade streama -u https://github.com/YunoHost-Apps/streama_ynh/tree/testing --debug
 ```
-
-
-
-
-
-
-
-
-
-
-
- 
-
-        

@@ -11,22 +11,11 @@ Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install
 
 **Version incluse :** 1.9.1
 
-- [Projet Yunohost](https://yunohost.org)
-- [Site web de Streama](https://docs.streama-project.com/)
-
-![](https://raw.githubusercontent.com/streamaserver/streama/master/design/banner2.png)
-
-
 ## Captures d'écran
 
-![Streama 1](https://user-images.githubusercontent.com/51749973/96721582-9fb9f900-13ac-11eb-89b0-c20a6019c9c6.jpg)
-![Streama 2](https://user-images.githubusercontent.com/51749973/96721578-9f216280-13ac-11eb-9f6c-94b4199f8eaf.jpg)
 ![Streama 3](https://user-images.githubusercontent.com/51749973/96721577-9f216280-13ac-11eb-935c-d083f4b010a2.jpg)
-![Streama 4](https://user-images.githubusercontent.com/51749973/96721574-9df03580-13ac-11eb-9031-fb1c2dbfca9a.jpg)
-
 
 ## Démo
-
 
 * [Demo officielle](https://streama.demo-version.net)
 
@@ -112,8 +101,7 @@ Ceci pourra être changé dans les paramètres.
 
 ---
 
-Informations pour les développeurs
-----------------
+## Informations pour les développeurs
 
 Merci de faire vos pull request sur la [branche testing](https://github.com/YunoHost-Apps/streama_ynh/tree/testing).
 
