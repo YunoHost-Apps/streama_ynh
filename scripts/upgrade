@@ -66,6 +66,15 @@ ynh_script_progression --message="Upgrading dependencies..." --time --weight=1
 ynh_install_app_dependencies $pkg_dependencies
 
 #=================================================
+# SETUP SYSTEMD
+#=================================================
+ynh_script_progression --message="Configuring a systemd service..." --weight=1
+
+ynh_replace_string --match_string="__PORT__" --replace_string="$port" --target_file="../conf/systemd.service"
+
+ynh_add_systemd_config
+
+#=================================================
 # GENERIC FINALIZATION
 #=================================================
 # SECURE FILES AND DIRECTORIES
@@ -74,13 +83,33 @@ ynh_install_app_dependencies $pkg_dependencies
 # Set permissions to app files
 mkdir -p $final_path/data/streama
 ln -s $final_path/data/streama /home/yunohost.app/streama
-chown -R $app: $final_path
 cp -a "../conf/convert.sh" /usr/bin/convert_movies
+
+#=================================================
+# GENERIC FINALIZATION
+#=================================================
+# SECURE FILES AND DIRECTORIES
+#=================================================
+
+chown -R $app: $final_path
 chmod +x /usr/bin/convert_movies
+chmod +x $final_path/streama.jar
 
+#=================================================
+# INTEGRATE SERVICE IN YUNOHOST
+#=================================================
+ynh_script_progression --message="Integrating service in YunoHost..." --time --weight=1
 
-# Start streama service
-systemctl start streama
+yunohost service add $app --description "A short description of the app" --log "/var/log/$app/$app.log"
+
+#=================================================
+# START SYSTEMD SERVICE
+#=================================================
+ynh_script_progression --message="Starting a systemd service..." --time --weight=1
+
+# Start a systemd service
+ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log" --line_match="finished configuring Spring Security LDAP"
+
 
 #=================================================
 # RELOAD NGINX
