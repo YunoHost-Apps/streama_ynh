@@ -9,7 +9,7 @@ Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install
 
 ## Vue d'ensemble
 
-**Version incluse :** 1.9.1
+**Version incluse :** 1.9.2
 
 ## Captures d'écran
 

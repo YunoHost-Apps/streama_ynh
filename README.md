@@ -8,7 +8,7 @@
 > *This package allows you to install Streama quickly and simply on a YunoHost server.  
 If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/install) to learn how to install it.*
 
-**Shipped version:** 1.9.1
+**Shipped version:** 1.9.2
 
 ## Screenshots
 

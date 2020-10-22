@@ -74,6 +74,7 @@ ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$final_path"
 
+mv $final_path/streama-1.9.2.jar $final_path/streama.jar
 
 #=================================================
 # NGINX CONFIGURATION
@@ -118,6 +119,7 @@ cp "../conf/convert.sh" /usr/bin/convert_movies
 
 chown -R $app: $final_path
 chmod +x /usr/bin/convert_movies
+chmod +x $final_path/streama-${streama_version}.jar
 
 #=================================================
 # SETUP SSOWAT
