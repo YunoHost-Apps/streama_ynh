@@ -8,6 +8,9 @@
 > *This package allows you to install Streama quickly and simply on a YunoHost server.  
 If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/install) to learn how to install it.*
 
+## Overview
+Streama is a free self hosted media streaming server running on Java, that you can install on your Linux distribution. Its features are similar to those of Kodi and Plex and it is simply a matter of personal choice which one you would like to use.
+
 **Shipped version:** 1.9.2
 
 ## Screenshots
@@ -23,13 +26,9 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 ## Installation guide
 
- App can be installed by YunoHost **admin web-interface** or by **running following command**:
-
-        $ sudo yunohost app install https://github.com/YunoHost-Apps/streama_ynh
-        
- Default upload directory is : /home/yunohost.app/streama (must be mentioned in *Settings* page or can be changed)
+Default upload directory is: `/home/yunohost.app/streama` (must be mentioned in *Settings* page or can be changed)
  
- Default local video directory is : /home/yunohost.app/streama/upload (must be mentioned in *Settings* page or can be changed)
+Default local video directory is: `/home/yunohost.app/streama/upload` (must be mentioned in *Settings* page or can be changed)
 
 ## Documentation
 
@@ -52,9 +51,8 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 ## Additional information
 
 * After install:
-
-**Username**: admin
-**Password**: admin
+ - **Username**: admin
+ - **Password**: admin
 
 This can be changed in settings.
 

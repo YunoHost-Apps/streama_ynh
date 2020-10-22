@@ -8,6 +8,7 @@
 Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install) pour apprendre comment l'installer.*
 
 ## Vue d'ensemble
+Streama est un serveur de streaming multimédia auto-hébergé gratuit fonctionnant sur Java, que vous pouvez installer sur votre distribution Linux. Ses fonctionnalités sont similaires à celles de Kodi et Plex et c'est simplement une question de choix personnel que vous souhaitez utiliser.
 
 **Version incluse :** 1.9.2
 
@@ -17,30 +18,20 @@ Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install
 
 ## Démo
 
-* [Demo officielle](https://streama.demo-version.net)
+* [Démo officielle](https://streama.demo-version.net)
 
 **Nom d’utilisateur** : demoUser
-
 **Mot de passe** : demoUser
-
-
 
 ## Guide d’installation
 
-  L’application peut être installée par **l’interface web-admin** YunoHost ou en **exécutant la commande suivante** :
-
-        $ sudo yunohost app install https://github.com/YunoHost-Apps/streama_ynh
-        
+ Le répertoire de téléchargement par défaut est : `/home/yunohost.app/streama` (doit être mentionné dans la page *Paramètres* ou peut être modifié)
  
- Le répertoire de téléchargement par défaut est : /home/yunohost.app/streama (doit être mentionné dans la page *Paramètres* ou peut être modifié)
- 
- Le répertoire vidéo local par défaut est : /home/yunohost.app/streama/upload (doit être mentionné dans la page *Paramètres* ou peut être modifié)
- 
+ Le répertoire vidéo local par défaut est : `/home/yunohost.app/streama/upload` (doit être mentionné dans la page *Paramètres* ou peut être modifié)
 
 ## Documentation
 
  * Documentation officielle : https://docs.streama-project.com/ ou https://github.com/streamaserver/streama/wiki
-
 
 #### Support multi-utilisateur
 
@@ -60,9 +51,8 @@ Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install
 
 * Après l’installation :
 
-**Nom d’utilisateur** : admin
-
-**Mot de passe** : admin
+ - **Nom d’utilisateur** : admin
+ - **Mot de passe** : admin
 
 Ceci pourra être changé dans les paramètres.
 
