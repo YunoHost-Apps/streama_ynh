@@ -45,7 +45,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
         
  Default upload directory is : /home/yunohost.app/streama (must be mentioned in *Settings* page or can be changed)
  
- Default local video is : /home/yunohost.app/streama/upload (must be mentioned in *Settings* page or can be changed)
+ Default local video directory is : /home/yunohost.app/streama/upload (must be mentioned in *Settings* page or can be changed)
 
 ## Documentation
 
