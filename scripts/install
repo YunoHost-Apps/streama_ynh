@@ -58,6 +58,8 @@ ynh_script_progression --message="Configuring firewall..." --weight=3
 port=$(ynh_find_port --port=8095)
 ynh_app_setting_set --app=$app --key=port --value=$port
 
+ynh_app_setting_set --app=$app --key=port --value=$port
+
 #=================================================
 # INSTALL DEPENDENCIES
 #=================================================

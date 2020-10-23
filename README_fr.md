@@ -50,7 +50,6 @@ Streama est un serveur de streaming multimédia auto-hébergé gratuit fonctionn
 ## Informations additionnelles
 
 * Après l’installation :
-
  - **Nom d’utilisateur** : admin
  - **Mot de passe** : admin
 
