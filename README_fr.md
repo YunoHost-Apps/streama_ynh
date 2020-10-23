@@ -8,55 +8,35 @@
 Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install) pour apprendre comment l'installer.*
 
 ## Vue d'ensemble
+Streama est un serveur de streaming multimédia auto-hébergé gratuit fonctionnant sur Java, que vous pouvez installer sur votre distribution Linux. Ses fonctionnalités sont similaires à celles de Kodi et Plex et c'est simplement une question de choix personnel que vous souhaitez utiliser.
 
-**Version incluse :** 1.9.1
-
-- [Projet Yunohost](https://yunohost.org)
-- [Site web de Streama](https://docs.streama-project.com/)
-
-![](https://raw.githubusercontent.com/streamaserver/streama/master/design/banner2.png)
-
+**Version incluse :** 1.9.2
 
 ## Captures d'écran
 
-![Streama 1](https://user-images.githubusercontent.com/51749973/96721582-9fb9f900-13ac-11eb-89b0-c20a6019c9c6.jpg)
-![Streama 2](https://user-images.githubusercontent.com/51749973/96721578-9f216280-13ac-11eb-9f6c-94b4199f8eaf.jpg)
 ![Streama 3](https://user-images.githubusercontent.com/51749973/96721577-9f216280-13ac-11eb-935c-d083f4b010a2.jpg)
-![Streama 4](https://user-images.githubusercontent.com/51749973/96721574-9df03580-13ac-11eb-9031-fb1c2dbfca9a.jpg)
-
 
 ## Démo
 
-
-* [Demo officielle](https://streama.demo-version.net)
+* [Démo officielle](https://streama.demo-version.net)
 
 **Nom d’utilisateur** : demoUser
-
 **Mot de passe** : demoUser
-
-
 
 ## Guide d’installation
 
-  L’application peut être installée par **l’interface web-admin** Yunohost ou en **exécutant la commande suivante** :
-
-        $ sudo yunohost app install https://github.com/YunoHost-Apps/streama_ynh
-        
+ Le répertoire de téléchargement par défaut est : `/home/yunohost.app/streama` (doit être mentionné dans la page *Paramètres* ou peut être modifié)
  
- Le répertoire de téléchargement par défaut est : /home/yunohost.app/streama (doit être mentionné dans la page *Paramètres* ou peut être modifié)
- 
- Le répertoire vidéo local par défaut est : /home/yunohost.app/streama/upload (doit être mentionné dans la page *Paramètres* ou peut être modifié)
- 
+ Le répertoire vidéo local par défaut est : `/home/yunohost.app/streama/upload` (doit être mentionné dans la page *Paramètres* ou peut être modifié)
 
 ## Documentation
 
  * Documentation officielle : https://docs.streama-project.com/ ou https://github.com/streamaserver/streama/wiki
 
-
 #### Support multi-utilisateur
 
-* L'authentification LDAP et HTTP est-elle prise en charge ? NON
-* L'application peut-elle être utilisée par plusieurs utilisateurs ? OUI
+* L'authentification LDAP et HTTP est-elle prise en charge ? **Non**
+* L'application peut-elle être utilisée par plusieurs utilisateurs ? **Oui**
 
 #### Architectures supportées
 
@@ -70,10 +50,8 @@ Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install
 ## Informations additionnelles
 
 * Après l’installation :
-
-**Nom d’utilisateur** : admin
-
-**Mot de passe** : admin
+ - **Nom d’utilisateur** : admin
+ - **Mot de passe** : admin
 
 Ceci pourra être changé dans les paramètres.
 
@@ -101,8 +79,6 @@ Ceci pourra être changé dans les paramètres.
         $ sudo dpkg -i libaften-dev_0.0.8svn20100103-dmo2_amd64.deb
         $ bash bootStrap.bash --deb --without-qt --with-cli
 
-
-
 ## Liens
 
  * Signaler un bug : https://github.com/YunoHost-Apps/streama_ynh/issues
@@ -112,8 +88,7 @@ Ceci pourra être changé dans les paramètres.
 
 ---
 
-Informations pour les développeurs
-----------------
+## Informations pour les développeurs
 
 Merci de faire vos pull request sur la [branche testing](https://github.com/YunoHost-Apps/streama_ynh/tree/testing).
 
