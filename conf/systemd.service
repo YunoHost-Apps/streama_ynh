@@ -1,5 +1,5 @@
 [Unit]
-Description=streama
+Description=Streama media system
 After=network.target
 
 [Service]
