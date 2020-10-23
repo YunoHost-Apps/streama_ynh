@@ -26,7 +26,7 @@ Streama est un serveur de streaming multimédia auto-hébergé gratuit fonctionn
 
 ## Guide d’installation
 
-> :warning: Streama doit être installé dans le domaine racine ou sous-domaine.
+> :warning: Streama doit être installé dans le domaine racine ou un sous-domaine dédié.
 
 Le répertoire de téléchargement par défaut est : `/home/yunohost.app/streama` (doit être mentionné dans la page *Paramètres* ou peut être modifié)
  
@@ -43,12 +43,10 @@ Le répertoire vidéo local par défaut est : `/home/yunohost.app/streama/upload
 
 #### Architectures supportées
 
-* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logsSTREAMA%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/streama/)
-* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/STREAMA%20%28Apps%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/streama/)
+* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/streama%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/streama/)
+* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/streama%20%28Apps%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/streama/)
 
 ## Limitations
-
-* L’installation nécessite un domaine ou un sous-domaine dédié.
 
 ## Informations additionnelles
 

@@ -6,10 +6,8 @@
 ;; Test complet
 	; Manifest
 		domain="domain.tld"	(DOMAIN)
-		path="/"	(PATH)	
-		is_public=1	(PUBLIC|public=1|private=0)
-#		password="pass"
-#		nextclouddomain="domain.tld"
+		path="/"	        (PATH)	
+		is_public=1	        (PUBLIC|public=1|private=0)
 		port="9980"	(PORT)
 	; Checks
 		pkg_linter=1
