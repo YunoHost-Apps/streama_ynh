@@ -133,7 +133,7 @@ yunohost service add $app --description "Streama media system" --log "/var/log/$
 ynh_script_progression --message="Starting a systemd service..." --weight=2
 
 # Start a systemd service
-ynh_systemd_action --service_name=$app --action="start" --log_path="systemd" --line_match="finished configuring Spring Security LDAP" --timeout="60"
+ynh_systemd_action --service_name=$app --action="start" --log_path="systemd" --line_match="Grails application running at" #--timeout="60"
 
 #=================================================
 # SETUP SSOWAT
