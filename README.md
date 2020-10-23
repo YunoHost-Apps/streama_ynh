@@ -15,7 +15,7 @@ Streama is a free self hosted media streaming server running on Java, that you c
 
 ## Screenshots
 
-![Streama 3](https://user-images.githubusercontent.com/51749973/96721577-9f216280-13ac-11eb-935c-d083f4b010a2.jpg)
+![](https://user-images.githubusercontent.com/51749973/96721577-9f216280-13ac-11eb-935c-d083f4b010a2.jpg)
 
 ## Demo
 
@@ -25,6 +25,8 @@ Streama is a free self hosted media streaming server running on Java, that you c
 **Password**: demoUser
 
 ## Installation guide
+
+> :warning: Streama must be installed in the root domain or subdomain.
 
 Default upload directory is: `/home/yunohost.app/streama` (must be mentioned in *Settings* page or can be changed)
  

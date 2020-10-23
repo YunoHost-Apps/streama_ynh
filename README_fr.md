@@ -1,4 +1,5 @@
 # Streama pour YunoHost
+
 [![Integration level](https://dash.yunohost.org/integration/streama.svg)](https://dash.yunohost.org/appci/app/streama) ![](https://ci-apps.yunohost.org/ci/badges/streama.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/streama.maintain.svg)  
 [![Install Streama with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=streama)
 
@@ -14,7 +15,7 @@ Streama est un serveur de streaming multimédia auto-hébergé gratuit fonctionn
 
 ## Captures d'écran
 
-![Streama 3](https://user-images.githubusercontent.com/51749973/96721577-9f216280-13ac-11eb-935c-d083f4b010a2.jpg)
+![](https://user-images.githubusercontent.com/51749973/96721577-9f216280-13ac-11eb-935c-d083f4b010a2.jpg)
 
 ## Démo
 
@@ -25,9 +26,11 @@ Streama est un serveur de streaming multimédia auto-hébergé gratuit fonctionn
 
 ## Guide d’installation
 
- Le répertoire de téléchargement par défaut est : `/home/yunohost.app/streama` (doit être mentionné dans la page *Paramètres* ou peut être modifié)
+> :warning: Streama doit être installé dans le domaine racine ou sous-domaine.
+
+Le répertoire de téléchargement par défaut est : `/home/yunohost.app/streama` (doit être mentionné dans la page *Paramètres* ou peut être modifié)
  
- Le répertoire vidéo local par défaut est : `/home/yunohost.app/streama/upload` (doit être mentionné dans la page *Paramètres* ou peut être modifié)
+Le répertoire vidéo local par défaut est : `/home/yunohost.app/streama/upload` (doit être mentionné dans la page *Paramètres* ou peut être modifié)
 
 ## Documentation
 
