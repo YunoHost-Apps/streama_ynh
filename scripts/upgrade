@@ -58,7 +58,7 @@ ynh_setup_source --dest_dir="$final_path"
 #=================================================
 # NGINX CONFIGURATION
 #=================================================
-ynh_script_progression --message="Upgrading NGINX web server configuration..." --weight=240
+ynh_script_progression --message="Upgrading NGINX web server configuration..." --weight=24
 
 # Create a dedicated NGINX config
 ynh_add_nginx_config
@@ -105,7 +105,7 @@ chmod +x $final_path/streama.jar
 #=================================================
 ynh_script_progression --message="Integrating service in YunoHost..." --weight=3
 
-yunohost service add $app --description "Streama media system" --log "/var/log/$app/$app.log"
+yunohost service add $app --description="Streama media system" --log="/var/log/$app/$app.log"
 
 #=================================================
 # START SYSTEMD SERVICE
