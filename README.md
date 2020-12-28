@@ -21,7 +21,7 @@ Streama is a free self hosted media streaming server running on Java, that you c
 
 * [Official demo](https://streama.demo-version.net)
 
-**User**: demoUser
+**User**: demoUser  
 **Password**: demoUser
 
 ## Installation guide
