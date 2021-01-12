@@ -21,7 +21,7 @@ Streama est un serveur de streaming multimédia auto-hébergé gratuit fonctionn
 
 * [Démo officielle](https://streama.demo-version.net)
 
-**Nom d’utilisateur** : demoUser
+**Nom d’utilisateur** : demoUser  
 **Mot de passe** : demoUser
 
 ## Guide d’installation
