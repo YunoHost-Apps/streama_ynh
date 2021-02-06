@@ -17,7 +17,6 @@
 		setup_private=1
 		setup_public=1
 		upgrade=1
-		upgrade=1	from_commit=c4f3e0cc214d739160c351f561d08496825bd846
 		backup_restore=1
 		multi_instance=0
 		port_already_use=0
@@ -26,7 +25,7 @@
 Email=
 Notification=none
 ;;; Upgrade options
-	; commit=c4f3e0cc214d739160c351f561d08496825bd846
-		name=Testing (#20)
+	; commit=
+		name=
 		manifest_arg=domain=DOMAIN&path=PATH&admin=USER&language=fr&is_public=1&password=pass&port=666&
 
