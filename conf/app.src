@@ -1,5 +1,5 @@
-SOURCE_URL=https://github.com/streamaserver/streama/releases/download/v1.9.2/streama-1.9.2.jar
-SOURCE_SUM=86362d9f61b85846a23aaafbfbe2746bb6fb25f9c459e8739337c8dbd128a786
+SOURCE_URL=https://github.com/streamaserver/streama/releases/download/v1.9.3/streama-1.9.3.jar
+SOURCE_SUM=efe96bc52413cada7653459fa3fb6c45a918da86338883ac04ceb844bb9223f1
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=jar
 SOURCE_IN_SUBDIR=false
