@@ -24,3 +24,8 @@
 ;;; Options
 Email=
 Notification=none
+;;; Upgrade options
+	; commit=
+		name=
+		manifest_arg=domain=DOMAIN&path=PATH&admin=USER&language=fr&is_public=1&password=pass&port=666&
+
