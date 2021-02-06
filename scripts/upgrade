@@ -105,7 +105,6 @@ ynh_add_systemd_config
 
 # Set permissions to app files
 mkdir -p $final_path/data/streama
-ln -s $final_path/data/streama /home/yunohost.app/streama
 cp -a "../conf/convert.sh" /usr/bin/convert_movies
 
 #=================================================
