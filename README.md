@@ -11,7 +11,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 ## Overview
 Streama is a free self hosted media streaming server running on Java, that you can install on your Linux distribution. Its features are similar to those of Kodi and Plex and it is simply a matter of personal choice which one you would like to use.
 
-**Shipped version:** 1.9.2
+**Shipped version:** 1.9.3
 
 ## Screenshots
 
