@@ -93,7 +93,7 @@ ynh_install_app_dependencies $pkg_dependencies
 ynh_script_progression --message="Configuring a systemd service..." --weight=3
 
 # This can be removed as the variable is dynamically replaced by ynh_add_systemd_config helper
-ynh_replace_string --match_string="__PORT__" --replace_string="$port" --target_file="../conf/systemd.service"
+#ynh_replace_string --match_string="__PORT__" --replace_string="$port" --target_file="../conf/systemd.service"
 
 ynh_add_systemd_config
 
@@ -130,7 +130,7 @@ yunohost service add $app --description="Streama media system" --log="/var/log/$
 ynh_script_progression --message="Starting a systemd service..." --weight=5
 
 # Start a systemd service
-ynh_systemd_action --service_name=$app --action=start --log_path="systemd" --line_match="Grails application running at"
+ynh_systemd_action --service_name=$app --action=start --log_path=systemd --line_match="Grails application running at"
 
 #=================================================
 # RELOAD NGINX
