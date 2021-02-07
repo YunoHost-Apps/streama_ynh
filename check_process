@@ -1,8 +1,6 @@
 # See here for more informations
 # https://github.com/YunoHost/package_check#syntax-check_process-file
 
-# Move this file from check_process.default to check_process when you have filled it.
-
 ;; Test complet
 	; Manifest
 		domain="domain.tld"	(DOMAIN)
@@ -28,4 +26,3 @@ Notification=none
 	; commit=
 		name=
 		manifest_arg=domain=DOMAIN&path=PATH&admin=USER&language=fr&is_public=1&password=pass&port=666&
-
