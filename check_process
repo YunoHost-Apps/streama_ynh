@@ -15,6 +15,7 @@
 		setup_private=1
 		setup_public=1
 		upgrade=1
+		upgrade=1	from_commit=3a02114f50e785722bc592cbcc33f92bf070b1c1
 		backup_restore=1
 		multi_instance=0
 		port_already_use=0
@@ -23,6 +24,6 @@
 Email=
 Notification=none
 ;;; Upgrade options
-	; commit=
-		name=
+	; commit=3a02114f50e785722bc592cbcc33f92bf070b1c1
+		name=Upgrade to 1.9.3 (#28) 
 		manifest_arg=domain=DOMAIN&path=PATH&admin=USER&language=fr&is_public=1&password=pass&port=666&
