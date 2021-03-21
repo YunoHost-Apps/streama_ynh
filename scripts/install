@@ -65,6 +65,14 @@ ynh_print_info "Installing dependencies..."
 ynh_install_app_dependencies $pkg_dependencies
 
 #=================================================
+# CREATE DEDICATED USER
+#=================================================
+ynh_script_progression --message="Configuring system user..." --weight=2
+
+# Create a system user
+ynh_system_user_create --username=$app --home_dir="$final_path"
+
+#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression --message="Setting up source files..." --weight=2
@@ -80,14 +88,6 @@ ynh_script_progression --message="Configuring NGNX web server..." --weight=3
 
 # Create a dedicated NGINX config
 ynh_add_nginx_config
-
-#=================================================
-# CREATE DEDICATED USER
-#=================================================
-ynh_script_progression --message="Configuring system user..." --weight=2
-
-# Create a system user
-ynh_system_user_create --username=$app
 
 #=================================================
 # SETUP SYSTEMD
