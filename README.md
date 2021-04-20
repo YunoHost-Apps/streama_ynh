@@ -43,8 +43,8 @@ Default local video directory is: `/home/yunohost.app/streama/upload` (must be m
 
 #### Supported architectures
 
-* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/streama%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/streama/)
-* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/streama%20%28Apps%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/streama/)
+* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/streama.svg)](https://ci-apps.yunohost.org/ci/apps/streama/)
+* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/streama.svg)](https://ci-apps-arm.yunohost.org/ci/apps/streama/)
 
 ## Limitations
 
