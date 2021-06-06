@@ -118,7 +118,7 @@ ynh_add_systemd_config
 
 # Set permissions to app files
 mkdir -p $final_path/data/streama
-ynh_add_config --template="../conf/convert.sh" --destination="/usr/bin/convert_movies/convert.sh"
+ynh_add_config --template="../conf/convert.sh" --destination="/usr/bin/convert_movies"
 chmod +x "/usr/bin/convert_movies"
 
 #=================================================
