@@ -65,6 +65,14 @@ ynh_print_info "Installing dependencies..."
 ynh_install_app_dependencies $pkg_dependencies
 
 #=================================================
+# CREATE DEDICATED USER
+#=================================================
+ynh_script_progression --message="Configuring system user..." --weight=2
+
+# Create a system user
+ynh_system_user_create --username=$app --home_dir="$final_path"
+
+#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression --message="Setting up source files..." --weight=2
@@ -72,6 +80,11 @@ ynh_script_progression --message="Setting up source files..." --weight=2
 ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$final_path"
+
+chmod 750 "$final_path"
+chmod -R o-rwx "$final_path"
+chown -R $app:www-data "$final_path"
+chmod +x $final_path/streama.jar
 
 #=================================================
 # NGINX CONFIGURATION
@@ -82,20 +95,9 @@ ynh_script_progression --message="Configuring NGNX web server..." --weight=3
 ynh_add_nginx_config
 
 #=================================================
-# CREATE DEDICATED USER
-#=================================================
-ynh_script_progression --message="Configuring system user..." --weight=2
-
-# Create a system user
-ynh_system_user_create --username=$app
-
-#=================================================
 # SETUP SYSTEMD
 #=================================================
 ynh_script_progression --message="Configuring a systemd service..." --weight=1
-
-# This can be removed as the variable is dynamically replaced by ynh_add_systemd_config helper
-ynh_replace_string --match_string="__PORT__" --replace_string="$port" --target_file="../conf/systemd.service"
 
 ynh_add_systemd_config
 
@@ -108,17 +110,8 @@ ynh_add_systemd_config
 # Set permissions to app files
 mkdir -p $final_path/data/streama
 ln -s $final_path/data/streama /home/yunohost.app/streama
-cp "../conf/convert.sh" /usr/bin/convert_movies
-
-#=================================================
-# GENERIC FINALIZATION
-#=================================================
-# SECURE FILES AND DIRECTORIES
-#=================================================
-
-chown -R $app: $final_path
-chmod +x /usr/bin/convert_movies
-chmod +x $final_path/streama.jar
+ynh_add_config --template="../conf/convert.sh" --destination="/usr/bin/convert_movies"
+chmod +x "/usr/bin/convert_movies"
 
 #=================================================
 # INTEGRATE SERVICE IN YUNOHOST
