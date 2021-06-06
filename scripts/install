@@ -110,18 +110,8 @@ ynh_add_systemd_config
 # Set permissions to app files
 mkdir -p $final_path/data/streama
 ln -s $final_path/data/streama /home/yunohost.app/streama
-ynh_add_config --template="../conf/convert.sh" --destination="/usr/bin/convert_movies/convert.sh"
+ynh_add_config --template="../conf/convert.sh" --destination="/usr/bin/convert_movies"
 chmod +x "/usr/bin/convert_movies"
-
-#=================================================
-# GENERIC FINALIZATION
-#=================================================
-# SECURE FILES AND DIRECTORIES
-#=================================================
-
-chown -R $app: $final_path
-chmod +x /usr/bin/convert_movies
-chmod +x $final_path/streama.jar
 
 #=================================================
 # INTEGRATE SERVICE IN YUNOHOST
