@@ -65,7 +65,7 @@ Ceci pourra être changé dans les paramètres.
 
 ## Documentations et ressources
 
-* Site officiel de l'app : https://streamaserver.org/
+* Site officiel de l'app : https://docs.streama-project.com
 * Documentation officielle de l'admin : https://docs.streama-project.com/
 * Dépôt de code officiel de l'app : https://github.com/streamaserver/streama
 * Documentation YunoHost pour cette app : https://yunohost.org/app_streama

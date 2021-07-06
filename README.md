@@ -69,7 +69,7 @@ This can be changed in settings.
 
 ## Documentation and resources
 
-* Official app website: https://streamaserver.org/
+* Official app website: https://docs.streama-project.com
 * Official admin documentation: https://docs.streama-project.com/
 * Upstream app code repository: https://github.com/streamaserver/streama
 * YunoHost documentation for this app: https://yunohost.org/app_streama
