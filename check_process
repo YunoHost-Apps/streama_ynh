@@ -3,7 +3,6 @@
 		domain="domain.tld"
 		path="/"
 		is_public=1
-		port="9980"=
 	; Checks
 		pkg_linter=1
 		setup_sub_dir=1
