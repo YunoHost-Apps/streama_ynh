@@ -1,11 +1,8 @@
-# See here for more informations
-# https://github.com/YunoHost/package_check#syntax-check_process-file
-
 ;; Test complet
 	; Manifest
-		domain="domain.tld"	(DOMAIN)
-		path="/"	        (PATH)	
-		is_public=1	        (PUBLIC|public=1|private=0)
+		domain="domain.tld"
+		path="/"
+		is_public=1
 		port="9980"	(PORT)
 	; Checks
 		pkg_linter=1

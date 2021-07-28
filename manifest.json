@@ -8,13 +8,21 @@
     },
     "version": "1.10.3~ynh2",
     "url": "https://streamaserver.org/",
+    "upstream": {
+        "license": "MIT",
+        "website": "https://streamaserver.org/",
+        "demo": "https://streama.demo-version.net",
+        "admindoc": "https://docs.streama-project.com/",
+        "userdoc": "https://yunohost.org/apps",
+        "code": "https://github.com/streamaserver/streama"
+    },
     "license": "MIT",
     "maintainer": {
         "name": "liberodark",
         "email": "liberodark@gmail.com"
     },
     "requirements": {
-        "yunohost": ">= 4.1.7"
+        "yunohost": ">= 4.2.4"
     },
     "multi_instance": false,
     "services": [
