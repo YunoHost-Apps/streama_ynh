@@ -7,10 +7,10 @@
         "fr": "Serveur de streaming auto-hébergé"
     },
     "version": "1.10.3~ynh2",
-    "url": "https://docs.streama-project.com",
+    "url": "https://streamaserver.org/",
     "upstream": {
         "license": "MIT",
-        "website": "https://docs.streama-project.com",
+        "website": "https://streamaserver.org/",
         "demo": "https://streama.demo-version.net",
         "admindoc": "https://docs.streama-project.com/",
         "code": "https://github.com/streamaserver/streama"

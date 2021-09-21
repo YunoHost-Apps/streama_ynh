@@ -19,10 +19,17 @@ Serveur de streaming auto-hébergé
 
 ## Captures d'écran
 
-![](./doc/screenshots/96721577-9f216280-13ac-11eb-935c-d083f4b010a2.jpg)
 ![](./doc/screenshots/screenshot.jpg)
 
 ## Avertissements / informations importantes
+
+## Guide d’installation
+
+> :warning: Streama doit être installé dans le domaine racine ou un sous-domaine dédié.
+
+Le répertoire de téléchargement par défaut est : `/home/yunohost.app/streama` (doit être mentionné dans la page *Paramètres* ou peut être modifié)
+ 
+Le répertoire vidéo local par défaut est : `/home/yunohost.app/streama/upload` (doit être mentionné dans la page *Paramètres* ou peut être modifié)
 
 ## Informations additionnelles
 
@@ -58,7 +65,7 @@ Ceci pourra être changé dans les paramètres.
 
 ## Documentations et ressources
 
-* Site officiel de l'app : https://docs.streama-project.com
+* Site officiel de l'app : https://streamaserver.org/
 * Documentation officielle de l'admin : https://docs.streama-project.com/
 * Dépôt de code officiel de l'app : https://github.com/streamaserver/streama
 * Documentation YunoHost pour cette app : https://yunohost.org/app_streama
