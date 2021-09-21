@@ -31,8 +31,7 @@
     "arguments": {
         "install": [{
                 "name": "domain",
-                "type": "domain",
-                "example": "streama.example.com"
+                "type": "domain"
             },
             {
                 "name": "is_public",
