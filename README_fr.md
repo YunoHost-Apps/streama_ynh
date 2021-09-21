@@ -19,6 +19,7 @@ Serveur de streaming auto-hébergé
 
 ## Captures d'écran
 
+![](./doc/screenshots/96721577-9f216280-13ac-11eb-935c-d083f4b010a2.jpg)
 ![](./doc/screenshots/screenshot.jpg)
 
 ## Avertissements / informations importantes
