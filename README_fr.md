@@ -13,7 +13,7 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 
 Serveur de streaming auto-hébergé
 
-**Version incluse :** 1.10.3~ynh2
+**Version incluse :** 1.10.4~ynh1
 
 **Démo :** https://streama.demo-version.net
 
