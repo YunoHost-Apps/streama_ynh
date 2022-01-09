@@ -17,13 +17,16 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 Self hosted streaming media server
 
-**Shipped version:** 1.10.3~ynh2
+**Shipped version:** 1.10.4~ynh1
 
 **Demo:** https://streama.demo-version.net
 
 ## Screenshots
 
+![](./doc/screenshots/96721577-9f216280-13ac-11eb-935c-d083f4b010a2.jpg)
 ![](./doc/screenshots/screenshot.jpg)
+
+## Disclaimers / important information
 
 ## Disclaimers / important information
 
