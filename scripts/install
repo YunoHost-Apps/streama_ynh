@@ -118,8 +118,8 @@ chown -R $app:www-data "$datadir"
 ynh_script_progression --message="Adding a configuration file..."
 
 # Set permissions to app files
-mkdir -p $final_path/data/streama
-ln -s $final_path/data/streama $datadir
+mkdir -p $final_path/data
+ln -s $datadir $final_path/data/streama
 ynh_add_config --template="../conf/convert.sh" --destination="/usr/bin/convert_movies"
 chmod +x "/usr/bin/convert_movies"
 
