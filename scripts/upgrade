@@ -14,33 +14,44 @@ source /usr/share/yunohost/helpers
 #=================================================
 ynh_script_progression --message="Loading installation settings..." --weight=1
 
-# See comments in install script
 app=$YNH_APP_INSTANCE_NAME
 
 domain=$(ynh_app_setting_get --app=$app --key=domain)
 path_url=$(ynh_app_setting_get --app=$app --key=path)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 port=$(ynh_app_setting_get --app=$app --key=port)
+datadir=$(ynh_app_setting_get --app=$app --key=datadir)
 
 #=================================================
 # CHECK VERSION
 #=================================================
+ynh_script_progression --message="Checking version..."
 
 upgrade_type=$(ynh_check_app_version_changed)
 
 #=================================================
 # BACKUP BEFORE UPGRADE THEN ACTIVE TRAP
 #=================================================
-ynh_script_progression --message="Backing up Streama before upgrading (may take a while)..." --weight=2
+ynh_script_progression --message="Backing up the app before upgrading (may take a while)..." --weight=2
 
 # Backup the current version of the app
 ynh_backup_before_upgrade
 ynh_clean_setup () {
-	# restore it if the upgrade fails
+	ynh_clean_check_starting
+	# Restore it if the upgrade fails
 	ynh_restore_upgradebackup
 }
 # Exit if an error occurs during the execution of the script
 ynh_abort_if_errors
+
+#=================================================
+# STANDARD UPGRADE STEPS
+#=================================================
+# STOP SYSTEMD SERVICE
+#=================================================
+ynh_script_progression --message="Stopping a systemd service..." --weight=20
+
+ynh_systemd_action --service_name=$app --action="stop" --log_path="/var/log/$app/$app.log"
 
 #=================================================
 # ENSURE DOWNWARD COMPATIBILITY
@@ -54,15 +65,11 @@ if ynh_legacy_permissions_exists; then
 	ynh_app_setting_delete --app=$app --key=is_public
 fi
 
-#=================================================
-# STANDARD UPGRADE STEPS
-#=================================================
-# STOP SYSTEMD SERVICE
-#=================================================
-ynh_script_progression --message="Stopping a systemd service..." --weight=20
-
-ynh_systemd_action --service_name=$app --action=stop --log_path="/var/log/$app/$app.log"
-
+# If db_name doesn't exist, create it
+if [ -z "$datadir" ]; then
+	datadir=/home/yunohost.app/$app
+	ynh_app_setting_set --app=$app --key=datadir --value=$datadir
+fi
 #=================================================
 # CREATE DEDICATED USER
 #=================================================
@@ -89,6 +96,13 @@ chown -R $app:www-data "$final_path"
 chmod +x $final_path/streama.jar
 
 #=================================================
+# UPGRADE DEPENDENCIES
+#=================================================
+ynh_script_progression --message="Upgrading dependencies..." --weight=5
+
+ynh_install_app_dependencies $pkg_dependencies
+
+#=================================================
 # NGINX CONFIGURATION
 #=================================================
 ynh_script_progression --message="Upgrading NGINX web server configuration..." --weight=24
@@ -97,30 +111,27 @@ ynh_script_progression --message="Upgrading NGINX web server configuration..." -
 ynh_add_nginx_config
 
 #=================================================
-# UPGRADE DEPENDENCIES
+# SPECIFIC UPGRADE
 #=================================================
-ynh_script_progression --message="Upgrading dependencies..." --weight=5
+# UPDATE A CONFIG FILE
+#=================================================
+ynh_script_progression --message="Updating a configuration file..."
 
-ynh_install_app_dependencies $pkg_dependencies
+# Set permissions to app files
+mkdir -p $final_path/data
+ynh_add_config --template="../conf/convert.sh" --destination="/usr/bin/convert_movies"
+chmod +x "/usr/bin/convert_movies"
 
 #=================================================
 # SETUP SYSTEMD
 #=================================================
-ynh_script_progression --message="Configuring a systemd service..." --weight=3
+ynh_script_progression --message="Upgrading systemd configuration..." --weight=3
 
+# Create a dedicated systemd config
 ynh_add_systemd_config
 
 #=================================================
 # GENERIC FINALIZATION
-#=================================================
-# SECURE FILES AND DIRECTORIES
-#=================================================
-
-# Set permissions to app files
-mkdir -p $final_path/data/streama
-ynh_add_config --template="../conf/convert.sh" --destination="/usr/bin/convert_movies"
-chmod +x "/usr/bin/convert_movies"
-
 #=================================================
 # INTEGRATE SERVICE IN YUNOHOST
 #=================================================
@@ -133,8 +144,7 @@ yunohost service add $app --description="Streama media system" --log="/var/log/$
 #=================================================
 ynh_script_progression --message="Starting a systemd service..." --weight=5
 
-# Start a systemd service
-ynh_systemd_action --service_name=$app --action=start --log_path=systemd --line_match="Grails application running at"
+ynh_systemd_action --service_name=$app --action="start" --log_path=systemd --line_match="Grails application running at"
 
 #=================================================
 # RELOAD NGINX
@@ -147,4 +157,4 @@ ynh_systemd_action --service_name=nginx --action=reload
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Upgrade of Streama completed" --last
+ynh_script_progression --message="Upgrade of $app completed" --last

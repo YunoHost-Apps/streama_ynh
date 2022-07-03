@@ -6,6 +6,7 @@
 # IMPORT GENERIC HELPERS
 #=================================================
 
+# Keep this path for calling _common.sh inside the execution's context of backup and restore scripts
 source ../settings/scripts/_common.sh
 source /usr/share/yunohost/helpers
 
@@ -22,29 +23,25 @@ ynh_abort_if_errors
 #=================================================
 # LOAD SETTINGS
 #=================================================
-ynh_script_progression --message="Loading settings..." --weight=1
+ynh_script_progression --message="Loading installation settings..." --weight=1
 
 app=$YNH_APP_INSTANCE_NAME
 
 domain=$(ynh_app_setting_get --app=$app --key=domain)
 path_url=$(ynh_app_setting_get --app=$app --key=path)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
+datadir=$(ynh_app_setting_get --app=$app --key=datadir)
 
 #=================================================
 # CHECK IF THE APP CAN BE RESTORED
 #=================================================
 ynh_script_progression --message="Validating restoration parameters..." --weight=3
 
-test ! -d "$final_path" || ynh_die --message="There is already a directory: $final_path "
+test ! -d $final_path \
+	|| ynh_die --message="There is already a directory: $final_path "
 
 #=================================================
 # STANDARD RESTORATION STEPS
-#=================================================
-# RESTORE THE NGINX CONFIGURATION
-#=================================================
-
-ynh_restore_file --origin_path="/etc/nginx/conf.d/$domain.d/$app.conf"
-
 #=================================================
 # RECREATE THE DEDICATED USER
 #=================================================
@@ -56,7 +53,7 @@ ynh_system_user_create --username=$app --home_dir="$final_path"
 #=================================================
 # RESTORE THE APP MAIN DIR
 #=================================================
-ynh_script_progression --message="Restoring Streama main directory..." --weight=2
+ynh_script_progression --message="Restoring the app main directory..." --weight=2
 
 ynh_restore_file --origin_path="$final_path"
 
@@ -65,14 +62,46 @@ chmod -R o-rwx "$final_path"
 chown -R $app:www-data "$final_path"
 
 #=================================================
-# INSTALL DEPENDENCIES
+# RESTORE THE DATA DIRECTORY
 #=================================================
-ynh_print_info "Installing dependencies..."
+ynh_script_progression --message="Restoring the data directory..."
 
-ynh_install_app_dependencies $pkg_dependencies
+ynh_restore_file --origin_path="$datadir" --not_mandatory
+
+mkdir -p $datadir
+
+chmod 750 "$datadir"
+chmod -R o-rwx "$datadir"
+chown -R $app:www-data "$datadir"
 
 #=================================================
 # SPECIFIC RESTORATION
+#=================================================
+# REINSTALL DEPENDENCIES
+#=================================================
+ynh_script_progression --message="Reinstalling dependencies..."
+
+# Define and install dependencies
+ynh_install_app_dependencies $pkg_dependencies
+
+#=================================================
+# RESTORE THE NGINX CONFIGURATION
+#=================================================
+ynh_script_progression --message="Restoring the NGINX web server configuration..."
+
+ynh_restore_file --origin_path="/etc/nginx/conf.d/$domain.d/$app.conf"
+
+#=================================================
+# ADD A CONFIGURATION
+#=================================================
+ynh_script_progression --message="Adding a configuration file..."
+
+# Set permissions to app files
+mkdir -p $final_path/data
+ln -s $datadir $final_path/data/streama
+ynh_add_config --template="../conf/convert.sh" --destination="/usr/bin/convert_movies"
+chmod +x "/usr/bin/convert_movies"
+
 #=================================================
 # RESTORE SYSTEMD
 #=================================================
@@ -93,7 +122,7 @@ yunohost service add $app --description="Streama media system" --log="/var/log/$
 #=================================================
 ynh_script_progression --message="Starting a systemd service..." --weight=2
 
-ynh_systemd_action --service_name=$app --action=start --log_path=systemd --line_match="Grails application running at"
+ynh_systemd_action --service_name=$app --action="start" --log_path=systemd --line_match="Grails application running at"
 
 #=================================================
 # GENERIC FINALIZATION
@@ -108,4 +137,4 @@ ynh_systemd_action --service_name=nginx --action=reload
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Restoration completed for Streama" --last
+ynh_script_progression --message="Restoration completed for $app" --last
