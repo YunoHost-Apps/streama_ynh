@@ -23,7 +23,6 @@ ynh_abort_if_errors
 # RETRIEVE ARGUMENTS FROM THE MANIFEST
 #=================================================
 
-# Retrieve arguments
 domain=$YNH_APP_ARG_DOMAIN
 path_url="/"
 is_public=$YNH_APP_ARG_IS_PUBLIC
@@ -44,23 +43,26 @@ ynh_webpath_register --app=$app --domain=$domain --path_url=$path_url
 #=================================================
 # STORE SETTINGS FROM MANIFEST
 #=================================================
+ynh_script_progression --message="Storing installation settings..."
 
 ynh_app_setting_set --app=$app --key=domain --value=$domain
 ynh_app_setting_set --app=$app --key=path --value=$path_url
 
 #=================================================
+# STANDARD MODIFICATIONS
+#=================================================
 # FIND AND OPEN A PORT
 #=================================================
 ynh_script_progression --message="Finding an available port..." --weight=3
 
-# Find a free port
+# Find an available port
 port=$(ynh_find_port --port=8095)
 ynh_app_setting_set --app=$app --key=port --value=$port
 
 #=================================================
 # INSTALL DEPENDENCIES
 #=================================================
-ynh_print_info "Installing dependencies..."
+ynh_script_progression --message="Installing dependencies..."
 
 ynh_install_app_dependencies $pkg_dependencies
 
@@ -95,24 +97,42 @@ ynh_script_progression --message="Configuring NGNX web server..." --weight=3
 ynh_add_nginx_config
 
 #=================================================
+# SPECIFIC SETUP
+#=================================================
+# CREATE DATA DIRECTORY
+#=================================================
+ynh_script_progression --message="Creating a data directory..."
+
+datadir=/home/yunohost.app/$app
+ynh_app_setting_set --app=$app --key=datadir --value=$datadir
+
+mkdir -p $datadir
+
+chmod 750 "$datadir"
+chmod -R o-rwx "$datadir"
+chown -R $app:www-data "$datadir"
+
+#=================================================
+# ADD A CONFIGURATION
+#=================================================
+ynh_script_progression --message="Adding a configuration file..."
+
+# Set permissions to app files
+mkdir -p $final_path/data/streama
+ln -s $final_path/data/streama $datadir
+ynh_add_config --template="../conf/convert.sh" --destination="/usr/bin/convert_movies"
+chmod +x "/usr/bin/convert_movies"
+
+#=================================================
 # SETUP SYSTEMD
 #=================================================
 ynh_script_progression --message="Configuring a systemd service..." --weight=1
 
+# Create a dedicated systemd config
 ynh_add_systemd_config
 
 #=================================================
 # GENERIC FINALIZATION
-#=================================================
-# SECURE FILES AND DIRECTORIES
-#=================================================
-
-# Set permissions to app files
-mkdir -p $final_path/data/streama
-ln -s $final_path/data/streama /home/yunohost.app/streama
-ynh_add_config --template="../conf/convert.sh" --destination="/usr/bin/convert_movies"
-chmod +x "/usr/bin/convert_movies"
-
 #=================================================
 # INTEGRATE SERVICE IN YUNOHOST
 #=================================================
@@ -126,16 +146,18 @@ yunohost service add $app --description="Streama media system" --log="/var/log/$
 ynh_script_progression --message="Starting a systemd service..." --weight=2
 
 # Start a systemd service
-ynh_systemd_action --service_name=$app --action=start --log_path=systemd --line_match="Grails application running at"
+ynh_systemd_action --service_name=$app --action="start" --log_path=systemd --line_match="Grails application running at"
 
 #=================================================
 # SETUP SSOWAT
 #=================================================
 ynh_script_progression --message="Configuring permissions..." --weight=1
 
-# Make app public if necessary or protect it
+# Make app public if necessary
 if [ $is_public -eq 1 ]
 then
+	# Everyone can access the app.
+	# The "main" permission is automatically created before the install script.
 	ynh_permission_update --permission="main" --add="visitors"
 fi
 
@@ -150,4 +172,4 @@ ynh_systemd_action --service_name=nginx --action=reload
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Installation of Streama completed" --last
+ynh_script_progression --message="Installation of $app completed" --last
