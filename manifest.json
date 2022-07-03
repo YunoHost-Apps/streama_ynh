@@ -6,7 +6,7 @@
         "en": "Self hosted streaming media server",
         "fr": "Serveur de streaming auto-hébergé"
     },
-    "version": "1.10.4~ynh1",
+    "version": "1.10.4~ynh2",
     "url": "https://streamaserver.org/",
     "upstream": {
         "license": "MIT",
@@ -29,7 +29,8 @@
         "mysql"
     ],
     "arguments": {
-        "install": [{
+        "install": [
+            {
                 "name": "domain",
                 "type": "domain"
             },
