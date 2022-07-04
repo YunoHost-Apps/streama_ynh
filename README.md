@@ -27,8 +27,6 @@ Self hosted streaming media server
 
 ## Disclaimers / important information
 
-## Disclaimers / important information
-
 ## Installation guide
 
 > :warning: Streama must be installed in the root domain or subdomain.
