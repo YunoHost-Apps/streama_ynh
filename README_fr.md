@@ -38,8 +38,8 @@ Le répertoire vidéo local par défaut est : `/home/yunohost.app/streama/upload
 ## Informations additionnelles
 
 * Après l’installation :
- - **Nom d’utilisateur** : admin
- - **Mot de passe** : admin
+ - **Nom d’utilisateur** : `admin`
+ - **Mot de passe** : `admin`
 
 Ceci pourra être changé dans les paramètres.
 
