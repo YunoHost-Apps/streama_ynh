@@ -23,7 +23,6 @@ Self hosted streaming media server
 
 ## Screenshots
 
-![Screenshot of Streama](./doc/screenshots/96721577-9f216280-13ac-11eb-935c-d083f4b010a2.jpg)
 ![Screenshot of Streama](./doc/screenshots/screenshot.jpg)
 
 ## Disclaimers / important information
