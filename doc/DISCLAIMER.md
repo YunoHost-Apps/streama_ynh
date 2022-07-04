@@ -9,8 +9,8 @@ Default local video directory is: `/home/yunohost.app/streama/upload` (must be m
 ## Additional information
 
 * After install:
- - **Username**: admin
- - **Password**: admin
+ - **Username**: `admin`
+ - **Password**: `admin`
 
 This can be changed in settings.
 
