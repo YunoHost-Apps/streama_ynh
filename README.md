@@ -17,16 +17,13 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 Self hosted streaming media server
 
-**Shipped version:** 1.10.4~ynh2
+**Shipped version:** 1.10.4~ynh3
 
 **Demo:** https://streama.demo-version.net
 
 ## Screenshots
 
-![Screenshot of Streama](./doc/screenshots/96721577-9f216280-13ac-11eb-935c-d083f4b010a2.jpg)
-![Screenshot of Streama](./doc/screenshots/screenshot.jpg)
-
-## Disclaimers / important information
+![Screenshot of Streama](./doc/screenshots/screenshot.png)
 
 ## Disclaimers / important information
 
@@ -41,8 +38,8 @@ Default local video directory is: `/home/yunohost.app/streama/upload` (must be m
 ## Additional information
 
 * After install:
- - **Username**: admin
- - **Password**: admin
+ - **Username**: `admin`
+ - **Password**: `admin`
 
 This can be changed in settings.
 

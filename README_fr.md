@@ -17,14 +17,13 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 
 Serveur de streaming auto-hébergé
 
-**Version incluse :** 1.10.4~ynh2
+**Version incluse :** 1.10.4~ynh3
 
 **Démo :** https://streama.demo-version.net
 
 ## Captures d'écran
 
-![Capture d'écran de Streama](./doc/screenshots/96721577-9f216280-13ac-11eb-935c-d083f4b010a2.jpg)
-![Capture d'écran de Streama](./doc/screenshots/screenshot.jpg)
+![Capture d'écran de Streama](./doc/screenshots/screenshot.png)
 
 ## Avertissements / informations importantes
 
@@ -39,8 +38,8 @@ Le répertoire vidéo local par défaut est : `/home/yunohost.app/streama/upload
 ## Informations additionnelles
 
 * Après l’installation :
- - **Nom d’utilisateur** : admin
- - **Mot de passe** : admin
+ - **Nom d’utilisateur** : `admin`
+ - **Mot de passe** : `admin`
 
 Ceci pourra être changé dans les paramètres.
 
