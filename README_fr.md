@@ -23,7 +23,7 @@ Serveur de streaming auto-hébergé
 
 ## Captures d'écran
 
-![Capture d'écran de Streama](./doc/screenshots/screenshot.jpg)
+![Capture d'écran de Streama](./doc/screenshots/screenshot.png)
 
 ## Avertissements / informations importantes
 
