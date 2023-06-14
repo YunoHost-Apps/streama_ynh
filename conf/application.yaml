@@ -12,13 +12,13 @@ environments:
 #           password:
         server:
             port: __PORT__
-        grails:
-            assets:
-                url: http://__DOMAIN____PATH__/assets/
-            controllers:
-                upload:
-                    maxFileSize: 10TB
-                    maxRequestSize: 10TB
+#        grails:
+#            assets:
+#                url: http://__DOMAIN____PATH__/assets/
+#            controllers:
+#                upload:
+#                    maxFileSize: 10TB
+#                    maxRequestSize: 10TB
 
 streama:
   regex:
