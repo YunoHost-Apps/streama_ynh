@@ -39,7 +39,7 @@ ynh_restore_file --origin_path="/etc/nginx/conf.d/$domain.d/$app.conf"
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
-ynh_script_progression --message="Adding a configuration file..."
+#ynh_script_progression --message="Adding a configuration file..."
 
 # Set permissions to app files
 #ln -s $data_dir $install_dir/data/streama
