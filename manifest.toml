@@ -45,7 +45,7 @@ ram.runtime = "50M"
         format = "jar"
         rename = "streama.jar"
 
-    [resourcesports]
+    [resources.ports]
 
     [resources.system_user]
 
