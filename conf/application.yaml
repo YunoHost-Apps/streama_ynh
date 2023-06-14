@@ -12,7 +12,6 @@ environments:
 #           password:
         server:
             port: __PORT__
-
         grails:
             assets:
                 url: http://__DOMAIN____PATH__/assets/
