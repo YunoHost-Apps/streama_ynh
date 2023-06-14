@@ -57,4 +57,4 @@ ram.runtime = "50M"
     main.url = "/"
 
     [resources.apt]
-    packages = "openjdk-17-jre-headless ffmpeg"
+    packages = "openjdk-11-jre-headless ffmpeg"
