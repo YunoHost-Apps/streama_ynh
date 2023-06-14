@@ -58,4 +58,7 @@ ram.runtime = "50M"
     main.url = "/"
 
     [resources.apt]
-    packages = "openjdk-11-jre-headless ffmpeg"
+    packages = "openjdk-11-jre-headless ffmpeg mariadb-server"
+
+    [resources.database]
+    type = "mysql"

@@ -53,11 +53,11 @@ ynh_add_nginx_config
 #=================================================
 # UPDATE A CONFIG FILE
 #=================================================
-ynh_script_progression --message="Updating a configuration file..."
+#ynh_script_progression --message="Updating a configuration file..."
 
 # Set permissions to app files
-ynh_add_config --template="../conf/convert.sh" --destination="/usr/bin/convert_movies"
-chmod +x "/usr/bin/convert_movies"
+#ynh_add_config --template="../conf/convert.sh" --destination="/usr/bin/convert_movies"
+#chmod +x "/usr/bin/convert_movies"
 
 #=================================================
 # SETUP SYSTEMD

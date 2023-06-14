@@ -42,9 +42,9 @@ ynh_restore_file --origin_path="/etc/nginx/conf.d/$domain.d/$app.conf"
 ynh_script_progression --message="Adding a configuration file..."
 
 # Set permissions to app files
-ln -s $data_dir $install_dir/data/streama
-ynh_add_config --template="../conf/convert.sh" --destination="/usr/bin/convert_movies"
-chmod +x "/usr/bin/convert_movies"
+#ln -s $data_dir $install_dir/data/streama
+#ynh_add_config --template="../conf/convert.sh" --destination="/usr/bin/convert_movies"
+#chmod +x "/usr/bin/convert_movies"
 
 #=================================================
 # RESTORE SYSTEMD
