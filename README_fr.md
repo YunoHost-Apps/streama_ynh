@@ -5,15 +5,16 @@ It shall NOT be edited by hand.
 
 # Streama pour YunoHost
 
-[![Niveau d'intégration](https://dash.yunohost.org/integration/streama.svg)](https://dash.yunohost.org/appci/app/streama) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/streama.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/streama.maintain.svg)  
+[![Niveau d’intégration](https://dash.yunohost.org/integration/streama.svg)](https://dash.yunohost.org/appci/app/streama) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/streama.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/streama.maintain.svg)
+
 [![Installer Streama avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=streama)
 
 *[Read this readme in english.](./README.md)*
 
-> *Ce package vous permet d'installer Streama rapidement et simplement sur un serveur YunoHost.
-Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l'installer et en profiter.*
+> *Ce package vous permet d’installer Streama rapidement et simplement sur un serveur YunoHost.
+Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l’installer et en profiter.*
 
-## Vue d'ensemble
+## Vue d’ensemble
 
 Serveur de streaming auto-hébergé
 
@@ -21,9 +22,9 @@ Serveur de streaming auto-hébergé
 
 **Démo :** https://streama.demo-version.net
 
-## Captures d'écran
+## Captures d’écran
 
-![Capture d'écran de Streama](./doc/screenshots/screenshot.png)
+![Capture d’écran de Streama](./doc/screenshots/screenshot.png)
 
 ## Avertissements / informations importantes
 
@@ -69,9 +70,9 @@ Ceci pourra être changé dans les paramètres.
 
 ## Documentations et ressources
 
-* Site officiel de l'app : <https://streamaserver.org/>
-* Documentation officielle de l'admin : <https://docs.streama-project.com/>
-* Dépôt de code officiel de l'app : <https://github.com/streamaserver/streama>
+* Site officiel de l’app : <https://streamaserver.org/>
+* Documentation officielle de l’admin : <https://docs.streama-project.com/>
+* Dépôt de code officiel de l’app : <https://github.com/streamaserver/streama>
 * Documentation YunoHost pour cette app : <https://yunohost.org/app_streama>
 * Signaler un bug : <https://github.com/YunoHost-Apps/streama_ynh/issues>
 
@@ -87,4 +88,4 @@ ou
 sudo yunohost app upgrade streama -u https://github.com/YunoHost-Apps/streama_ynh/tree/testing --debug
 ```
 
-**Plus d'infos sur le packaging d'applications :** <https://yunohost.org/packaging_apps>
+**Plus d’infos sur le packaging d’applications :** <https://yunohost.org/packaging_apps>
