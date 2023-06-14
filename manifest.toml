@@ -29,7 +29,11 @@ ram.runtime = "50M"
 [install]
     [install.domain]
     type = "domain"
-    full_domain = true
+    #full_domain = true
+
+    [install.path]
+    type = "path"
+    default = "/streama"
 
     [install.init_main_permission]
     help.en = "If enabled, Streama will be accessible by people who do not have an account. This can be changed later via the webadmin."

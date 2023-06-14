@@ -13,6 +13,11 @@ environments:
         server:
             port: __PORT__
 
+        grails:
+            assets:
+                url: http://__DOMAIN____PATH__/assets/
+
+
 streama:
   regex:
     movies: ^(?<Name>.*)[._ ]\(\d{4}\).*
