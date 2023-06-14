@@ -34,8 +34,8 @@ while IFS= read -r -d '' file
 do
   ffmpeg -nostdin -i "$file" -c:v libx264 -c:a aac "${file%.*}.mp4"
   rm -f "$file"
-done <   <(find __DATADIR__/upload/ -name '*.mkv' -print0 -o -name '*.avi' -print0)
-chown -R streama:users __DATADIR__/upload/
+done <   <(find __DATA_DIR__/upload/ -name '*.mkv' -print0 -o -name '*.avi' -print0)
+chown -R streama:users __DATA_DIR__/upload/
 }
 
 avidemux_convert(){
@@ -46,8 +46,8 @@ while IFS= read -r -d '' file
 do
   avidemux3_cli --load "$file" --output-format "$output_format" --video-codec "$video_codec" --audio-codec "$audio_codec" --save "${file%.*}.mp4" --quit
   rm -f "$file"
-done <   <(find __DATADIR__/upload/ -name '*.mkv' -print0 -o -name '*.avi' -print0)
-chown -R streama:users __DATADIR__/upload/
+done <   <(find __DATA_DIR__/upload/ -name '*.mkv' -print0 -o -name '*.avi' -print0)
+chown -R streama:users __DATA_DIR__/upload/
 }
 
 mencoder_convert(){
@@ -55,8 +55,8 @@ while IFS= read -r -d '' file
 do
   mencoder "$file" -o "${file%.*}.mp4" -ovc lavc -oac lavc
   rm -f "$file"
-done <   <(find __DATADIR__/upload/ -name '*.mkv' -print0 -o -name '*.avi' -print0)
-chown -R streama:users __DATADIR__/upload/
+done <   <(find __DATA_DIR__/upload/ -name '*.mkv' -print0 -o -name '*.avi' -print0)
+chown -R streama:users __DATA_DIR__/upload/
 }
 
 avconv_convert(){
@@ -64,8 +64,8 @@ while IFS= read -r -d '' file
 do
   avconv -i "$file" -c:v h264 -c:a aac "${file%.*}.mp4"
   rm -f "$file"
-done <   <(find __DATADIR__/upload/ -name '*.mkv' -print0 -o -name '*.avi' -print0)
-chown -R streama:users __DATADIR__/upload/
+done <   <(find __DATA_DIR__/upload/ -name '*.mkv' -print0 -o -name '*.avi' -print0)
+chown -R streama:users __DATA_DIR__/upload/
 }
 
 parse_args ()
