@@ -16,7 +16,7 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 
 ## Vue d’ensemble
 
-Serveur de streaming auto-hébergé
+Self hosted streaming media server
 
 **Version incluse :** 1.10.4~ynh3
 
