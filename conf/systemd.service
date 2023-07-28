@@ -1,5 +1,5 @@
 [Unit]
-Description=Streama media system
+Description=Streama: media system
 After=network.target
 
 [Service]
@@ -7,7 +7,7 @@ Type=simple
 User=__APP__
 Group=__APP__
 UMask=000
-WorkingDirectory=__FINALPATH__/
+WorkingDirectory=__INSTALL_DIR__/
 ExecStart=/usr/bin/java -Djava.awt.headless=true -Dserver.port=__PORT__ -jar streama.jar
 RestartSec=30
 Restart=always

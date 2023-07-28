@@ -5,7 +5,7 @@
 #=================================================
 
 # dependencies used by the app
-pkg_dependencies="openjdk-11-jre-headless ffmpeg"
+#REMOVEME? pkg_dependencies="openjdk-17-jre-headless ffmpeg"
 
 #=================================================
 # PERSONAL HELPERS
