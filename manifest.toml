@@ -2,10 +2,10 @@ packaging_format = 2
 
 id = "streama"
 name = "Streama"
-description.en = "Self hosted streaming media server"
-description.fr = "Serveur de streaming auto-hébergé"
+description.en = "streaming media server"
+description.fr = "Serveur de streaming"
 
-version = "1.10.4~ynh3"
+version = "1.10.5~ynh1"
 
 maintainers = [""]
 
@@ -17,7 +17,7 @@ admindoc = "https://docs.streama-project.com/"
 code = "https://github.com/streamaserver/streama"
 
 [integration]
-yunohost = ">= 11.1.20"
+yunohost = ">= 11.2"
 architectures = "all"
 multi_instance = false
 ldap = false
@@ -39,8 +39,8 @@ ram.runtime = "50M"
 
 [resources]
         [resources.sources.main]
-        url = "https://github.com/streamaserver/streama/releases/download/v1.10.4/streama-1.10.4.jar"
-        sha256 = "a1071ab783f4d47553ac38a5357b7ce801c8cfe3e523280feead865e23b7da2e"
+        url = "https://github.com/streamaserver/streama/releases/download/v1.10.5/streama-1.10.5.jar"
+        sha256 = "d456369c2f712cbf7749f4bc46268fe331a1d91c29fe0d89e910f8589c4a2603"
         extract = false
         format = "jar"
         rename = "streama.jar"
@@ -58,7 +58,7 @@ ram.runtime = "50M"
     main.url = "/"
 
     [resources.apt]
-    packages = "openjdk-11-jre-headless ffmpeg mariadb-server"
+    packages = "openjdk-11-jre-headless, ffmpeg, mariadb-server"
 
     [resources.database]
     type = "mysql"
