@@ -1,0 +1,73 @@
+packaging_format = 2
+
+id = "streama"
+name = "Streama"
+description.en = "streaming media server"
+description.fr = "Serveur de streaming"
+
+version = "1.10.5~ynh1"
+
+maintainers = [""]
+
+[upstream]
+license = "MIT"
+website = "https://streamaserver.org/"
+demo = "https://streama.demo-version.net"
+admindoc = "https://docs.streama-project.com/"
+code = "https://github.com/streamaserver/streama"
+
+[integration]
+yunohost = ">= 11.2"
+architectures = "all"
+multi_instance = false
+ldap = false
+sso = false
+disk = "50M"
+ram.build = "50M"
+ram.runtime = "50M"
+
+[install]
+    [install.domain]
+    type = "domain"
+    full_domain = true
+
+    [install.init_main_permission]
+    help.en = "If enabled, Streama will be accessible by people who do not have an account. This can be changed later via the webadmin."
+    help.fr = "Si cette case est cochée, Streama sera accessible aux personnes n’ayant pas de compte. Vous pourrez changer ceci plus tard via la webadmin."
+    type = "group"
+    default = "visitors"
+
+[resources]
+        [resources.sources.main]
+        url = "https://github.com/streamaserver/streama/releases/download/v1.10.5/streama-1.10.5.jar"
+        sha256 = "d456369c2f712cbf7749f4bc46268fe331a1d91c29fe0d89e910f8589c4a2603"
+        extract = false
+        format = "jar"
+        rename = "streama.jar"
+
+    [resources.ports]
+
+    [resources.system_user]
+
+    [resources.install_dir]
+
+    [resources.data_dir]
+    subdirs = ["data", "upload"]
+
+    [resources.permissions]
+    main.url = "/"
+
+    [resources.apt]
+    packages = "ffmpeg, mariadb-server"
+
+    packages_from_raw_bash = """
+    debian=$(lsb_release --codename --short)
+    if [[ $debian = "bullseye" ]]; then
+        echo "openjdk-11-jre";
+    elif [[ $debian = "bookworm" ]]; then
+        echo "openjdk-17-jre";
+    fi
+    """
+
+    [resources.database]
+    type = "mysql"
