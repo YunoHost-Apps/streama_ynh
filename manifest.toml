@@ -41,7 +41,6 @@ ram.runtime = "50M"
         url = "https://github.com/streamaserver/streama/releases/download/v1.10.5/streama-1.10.5.jar"
         sha256 = "d456369c2f712cbf7749f4bc46268fe331a1d91c29fe0d89e910f8589c4a2603"
         extract = false
-        format = "jar"
         rename = "streama.jar"
 
     [resources.ports]
