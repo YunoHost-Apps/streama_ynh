@@ -18,7 +18,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 Self hosted streaming media server
 
-**Shipped version:** 1.10.5~ynh1
+**Shipped version:** 1.10.5~ynh2
 
 **Demo:** https://streama.demo-version.net
 
