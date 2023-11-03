@@ -18,7 +18,7 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 
 Self hosted streaming media server
 
-**Version incluse :** 1.10.4~ynh3
+**Version incluse :** 1.10.5~ynh1
 
 **Démo :** https://streama.demo-version.net
 
@@ -31,7 +31,7 @@ Self hosted streaming media server
 * Site officiel de l’app : <https://streamaserver.org/>
 * Documentation officielle de l’admin : <https://docs.streama-project.com/>
 * Dépôt de code officiel de l’app : <https://github.com/streamaserver/streama>
-* Documentation YunoHost pour cette app : <https://yunohost.org/app_streama>
+* YunoHost Store: <https://apps.yunohost.org/app/streama>
 * Signaler un bug : <https://github.com/YunoHost-Apps/streama_ynh/issues>
 
 ## Informations pour les développeurs
