@@ -42,6 +42,8 @@ ram.runtime = "50M"
         sha256 = "d456369c2f712cbf7749f4bc46268fe331a1d91c29fe0d89e910f8589c4a2603"
         extract = false
         rename = "streama.jar"
+        autoupdate.strategy = "latest_github_release"
+        autoupdate.asset = "^streama-.*.jar$"
 
     [resources.ports]
 
