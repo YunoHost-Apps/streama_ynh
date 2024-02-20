@@ -22,49 +22,27 @@ chown -R $app:www-data "$install_dir"
 chmod +x $install_dir/streama.jar
 
 #=================================================
-# NGINX CONFIGURATION
+# SYSTEM CONFIGURATION
 #=================================================
-ynh_script_progression --message="Configuring NGNX web server..." --weight=3
+ynh_script_progression --message="Adding system configurations related to $app..." --weight=1
 
 # Create a dedicated NGINX config
 ynh_add_nginx_config
+
+# Create a dedicated systemd config
+ynh_add_systemd_config
+
+yunohost service add $app --description="Streama media system" --log="/var/log/$app/$app.log"
 
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
 ynh_script_progression --message="Adding a configuration file..." --weight=1
 
-ynh_add_config --template="../conf/application.yaml" --destination="$install_dir/application.yaml"
+ynh_add_config --template="application.yaml" --destination="$install_dir/application.yaml"
 
 chmod 400 "$install_dir/application.yaml"
 chown $app:$app "$install_dir/application.yaml"
-
-#=================================================
-# ADD A CONFIGURATION
-#=================================================
-#ynh_script_progression --message="Adding a configuration file..."
-
-# Set permissions to app files
-#ln -s $data_dir $install_dir/data/streama
-#ynh_add_config --template="../conf/convert.sh" --destination="/usr/bin/convert_movies"
-#chmod +x "/usr/bin/convert_movies"
-
-#=================================================
-# SETUP SYSTEMD
-#=================================================
-ynh_script_progression --message="Configuring a systemd service..." --weight=1
-
-# Create a dedicated systemd config
-ynh_add_systemd_config
-
-#=================================================
-# GENERIC FINALIZATION
-#=================================================
-# INTEGRATE SERVICE IN YUNOHOST
-#=================================================
-ynh_script_progression --message="Integrating service in YunoHost..." --weight=3
-
-yunohost service add $app --description="Streama media system" --log="/var/log/$app/$app.log"
 
 #=================================================
 # START SYSTEMD SERVICE
