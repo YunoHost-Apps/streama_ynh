@@ -7,7 +7,7 @@ description.fr = "Serveur de streaming"
 
 version = "1.10.5~ynh2"
 
-maintainers = [""]
+maintainers = []
 
 [upstream]
 license = "MIT"
