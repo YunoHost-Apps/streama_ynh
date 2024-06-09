@@ -18,7 +18,7 @@ NON debe editarse manualmente.
 
 Self hosted streaming media server
 
-**Versión proporcionada:** 1.10.5~ynh1
+**Versión proporcionada:** 1.10.5~ynh2
 
 **Demo:** <https://streama.demo-version.net>
 
