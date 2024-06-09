@@ -3,7 +3,7 @@
 请勿手动编辑。
 -->
 
-# YunoHost 的 Streama
+# YunoHost 上的 Streama
 
 [![集成程度](https://dash.yunohost.org/integration/streama.svg)](https://dash.yunohost.org/appci/app/streama) ![工作状态](https://ci-apps.yunohost.org/ci/badges/streama.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/streama.maintain.svg)
 
