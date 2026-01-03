@@ -5,7 +5,7 @@ name = "Streama"
 description.en = "streaming media server"
 description.fr = "Serveur de streaming"
 
-version = "1.10.5~ynh2"
+version = "1.11.0~ynh1"
 
 maintainers = []
 
@@ -17,11 +17,14 @@ admindoc = "https://docs.streama-project.com/"
 code = "https://github.com/streamaserver/streama"
 
 [integration]
-yunohost = ">= 11.2"
+yunohost = ">= 12.1.38"
+helpers_version = "2.1"
 architectures = "all"
 multi_instance = false
+
 ldap = false
 sso = false
+
 disk = "50M"
 ram.build = "50M"
 ram.runtime = "50M"
@@ -38,8 +41,8 @@ ram.runtime = "50M"
 
 [resources]
         [resources.sources.main]
-        url = "https://github.com/streamaserver/streama/releases/download/v1.10.5/streama-1.10.5.jar"
-        sha256 = "d456369c2f712cbf7749f4bc46268fe331a1d91c29fe0d89e910f8589c4a2603"
+        url = "https://github.com/streamaserver/streama/releases/download/v1.11.0/streama-1.11.0.jar"
+        sha256 = "d52eeeea6bae959c7741a888ed9780f9b01d52f40ab96bd335b183326234165d"
         extract = false
         rename = "streama.jar"
         autoupdate.strategy = "latest_github_release"
@@ -61,10 +64,10 @@ ram.runtime = "50M"
     packages = "ffmpeg, mariadb-server"
 
     packages_from_raw_bash = """
-    if [[ $YNH_DEBIAN_VERSION == "bullseye" ]]; then
-        echo "openjdk-11-jre";
-    elif [[ $YNH_DEBIAN_VERSION == "bookworm" ]]; then
+    if [[ $YNH_DEBIAN_VERSION == "bookworm" ]]; then
         echo "openjdk-17-jre";
+    elif [[ $YNH_DEBIAN_VERSION == "trixie" ]]; then
+        echo "openjdk-21-jre";
     fi
     """
 
