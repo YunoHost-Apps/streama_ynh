@@ -11,8 +11,6 @@ ynh_script_progression "Setting up source files..."
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$install_dir"
 
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R o-rwx "$install_dir"
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R $app:www-data "$install_dir"
 chmod +x $install_dir/streama.jar
 
 #=================================================
@@ -35,16 +33,13 @@ ynh_script_progression "Adding $app's configuration..."
 
 ynh_config_add --template="application.yaml" --destination="$install_dir/application.yaml"
 
-chmod 400 "$install_dir/application.yaml"
-chown $app:$app "$install_dir/application.yaml"
-
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
 # Start a systemd service
-ynh_systemctl --service=$app --action="start" --log_path=systemd --wait_until="Grails application running at"
+ynh_systemctl --service=$app --action="start"
 
 #=================================================
 # END OF SCRIPT
