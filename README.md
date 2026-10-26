@@ -12,7 +12,7 @@ streaming media server
 
 [![🌐 Official app website](https://img.shields.io/badge/Official_app_website-darkgreen?style=for-the-badge)](https://streamaserver.org/)
 [![App Demo](https://img.shields.io/badge/App_Demo-blue?style=for-the-badge)](https://streama.demo-version.net)
-[![Version: 1.10.5~ynh2](https://img.shields.io/badge/Version-1.10.5~ynh2-rgb(18,138,11)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/streama/)
+[![Version: 1.11.2~ynh1](https://img.shields.io/badge/Version-1.11.2~ynh1-rgb(18,138,11)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/streama/)
 
 <div align="center">
 <a href="https://apps.yunohost.org/app/streama"><img height="100px" src="https://github.com/YunoHost/yunohost-artwork/raw/refs/heads/main/badges/neopossum-badges/badge_more_info_on_the_appstore.svg"/></a>
